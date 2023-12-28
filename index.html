@@ -1,1 +1,536 @@
-%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang=%22es%22%3E%0A%3Chead%3E%0A%3C!--%20Wed%20Dec%2027%202023%2023:53:59%20GMT-0500%20(hora%20est%C3%A1ndar%20de%20Cuba)--%3E%0A%3Ctitle%3Eyh%3C/title%3E%0A%3Cmeta%20charset=%22UTF-8%22%3E%0A%3Cmeta%20name=%22viewport%22%20content=%22width=device-width,%20initial-scale=1,maximum-scale=1%22%3E%0A%3Cscript%20id=%22mlib%22%3Etitle='yh';var%20milibjsobserver=new%20IntersectionObserver(function(entries,%20self)%7Bentries.forEach(entry=%3E%7Bif(entry.isIntersecting)%7Be=entry.target;a=e.tagName;%0Aif(a=='IMG')%7BpreloadImage(e,self)%7D;%20/*self.unobserve(entry.target)%20*/%0A%7D%7D);%7D,%7Bthreshold:0%7D);rStyle=document.createElement('style');document.head.append(rStyle);%0ArStyle.innerHTML=%60@media(min-width:450px)%7B*::-webkit-scrollbar%7Bwidth:6px;height:7px;background-color:transparent%7D*::-webkit-scrollbar-thumb%7Bborder-radius:6px;border:4px%20solid%20#acacac%7D%7D%0Ahtml,body,.column,.full%7Bheight:100%25%7Dhtml,body,.fill,.full,header,main%7Bwidth:100%25%7D*%7Bmargin:0px;padding:0px;box-sizing:border-box%7D*%7Buser-select:none%7D*::selection%7Bbackground:#f00;color:#fff%7D%20%0Aa.button%7Btext-decoration:none;color:inherit%7D%0Abody%7Bfont-size:0.4cm%7D%0A:root%7B--bg:#fcfcfc;--cl:#000%7D%0A.theme-dark%7B--bg:#202834;--cl:#fff%7D%0A.theme%7Bbackground:var(--bg);color:var(--cl)%7D%0A.fit-cover%7Bobject-fit:cover%7D%0A.fit-contain%7Bobject-fit:contain%7D%0A%0A/*button*/%0A.button%7Bborder-radius:0.05cm;border:solid%200.02cm%20transparent;vertical-align:middle;white-space:nowrap;%7D%0A.flex%20.button~.button%7Bmargin-left:0.1cm%7D%0A.button.close%7Bborder-radius:2em;padding:0.1em%200.4em;box-shadow:0%200%202px%20#bbb%7D%0A.button.gale%7Btop:50%25;transform:translate(0,-50%25);margin:0.2cm%7D%0A.brs,.button.default%7Bborder:solid%200.5px%20rgba(0,0,0,0.6)%7D%0A.brn%7Bborder:none;outline:0%7D%0A%0A%0A/*position*/%0A.fixed%7Bposition:fixed%7D%0A.sticky,header.default,.btop%7Bposition:sticky%7D%0A.absolute%7Bposition:absolute%7D%0A.relative%7Bposition:relative%7D%0A%0A.top,header.default,.btop%7Btop:0%7D%0A.left%7Bleft:0%7D%0A.right%7Bright:0%7D%0A.bottom%7Bbottom:0%7D%0A%0A.z5,header%7Bz-index:5%7D%0A.fleft,section.default%7Bfloat:left%7D%0A.fright,aside.default%7Bfloat:right%7D%0A%0A.flex,nav.default%7Bdisplay:flex%7D.flex.column%7Bflex-direction:column%7D%0A.inblock,.button,nav%7Bdisplay:inline-block%7D%0A.dnone%7Bdisplay:none%7D%0A%0A.auto,nav%7Boverflow:auto%7D.hidden%7Boverflow:hidden%7D%0A%0A/*padding*/%0A.pad1%7Bpadding:0.1em%7D%0A.pad2,.button%7Bpadding:0.2em%7D%0A.pad3%7Bpadding:0.3em%7D%0A.pad4%7Bpadding:0.4em%7D%0A.pad5%7Bpadding:0.5em%7D%0A%0A%0A/*font-size*/%0A.fs01,.button.small%7Bfont-size:0.7em%7D%0A.fs0%7Bfont-size:0.5em%7D%0A.fs1,.button%7Bfont-size:1.1em%7D%0A.fs2,.button.close%7Bfont-size:1.2em%7D%0A.fs3%7Bfont-size:1.3em%7D%0A.fs4%7Bfont-size:1.4em%7D%0A.fs5,.title%7Bfont-size:1.5em%7D%0A.w1%7Bfont-weight:100%7D%0A.wn%7Bfont-weight:normal%7D%0A.w9,.title%7Bfont-weight:900%7D%0A.items-center,.button,.btop,nav.default%7Balign-items:center;justify-content:center%7D%0A.items-column%7Bflex-direction:column%7D%0A.center,.items-center%7Btext-align:center%7D%0A.tleft%7Btext-align:left%7D%0A%0A.cursive%7Bfont-family:cursive%7D%0A.monospace%7Bfont-family:monospace%7D%0A.fantasy%7Bfont-family:fantasy%7D%0A.verdana,dd,body%7Bfont-family:Verdana%7D%0A%0A/*background-color*/%0A.dark%7Bbackground:#202834%7D%0A.light,.button.default%7Bbackground:#fcfcfc%7D%0A.bgn%7Bbackground:none%7D%0A.red%7Bbackground:red%7D%0A.green%7Bbackground:green%7D%0A.black%7Bbackground:#000%7D%0A.dogerb,.select-true%7Bbackground:dodgerblue%7D%0A.bgdefault%7Bbackground:#222%7D%0A.dblue%7Bbackground:#000643%7D%0A.bsw,.button.close%7Bbackground:rgba(0,0,0,0.7)%7D%0A.blur,.btop%7Bbackdrop-filter:blur(10px)%20saturate(150%25)%7D%0A.filtro%7Bfilter:blur(7px)%7D%0A.filtro2%7Bfilter:blur(3px)%7D%0A%0A.cwhite,.black,.dblue,.dark,.bsw,.green,.red,.bgdefault,.dogerb,.select-true%7Bcolor:#fff%7D%0A.cblack,.light,.button.default%7Bcolor:#000%7D%0A%0A/*shadow*/%0A.sw%7Bbox-shadow:0%200%200px%20#000%7D%0A.swi%7Bbox-shadow:inset%200%200%205px%20#000%7D%0A.sws,.btop%7Bbox-shadow:0%200%203px%20#000%7D%0A.swl%7Bbox-shadow:0%200%2020px%20#000%7D%0A.swt,.bsw%7Btext-shadow:0%200%202px%20#000%7D%0A%0A/*maquetado*/%0Asection.default%7Bwidth:60%25%7D%0Aaside.default%7Bwidth:40%25%7D%0A.mx-w%7Bmax-width:800px;margin:auto%7D%0A.mx-h,video%7Bmax-height:80vh%7D%0A%0A.andrid%7Bdisplay:none%7D%0A@media(max-width:600px)%7B%0Abody%7Bfont-size:0.5cm%7D%0Asection.default,aside.default%7Bwidth:100%25%7D%0A.window%7Bdisplay:none%7D%0A.andrid%7Bdisplay:inline-block%7D%0A%7D%0Aimg,.fBlur,.fIn%7Btransition:0.5s%7D%0A.fBlur%20%7Banimation:fadeBlur%200.8s;%7D%20@keyframes%20fadeBlur%20%7B%200%25%20%7Bopacity:0.3%7D%20100%25%20%7Bopacity:1%7D%20%7D%0A.fIn%20%7Banimation:fadeIn%200.5s%7D%20@keyframes%20fadeIn%20%7B%200%25%20%7Bbottom:-100%25%7D%20100%25%20%7Bbottom:1%25%7D%20%7D%0A%60;%0Afotosinpage=%7Btotal:0,cargadas:0,open:0%7D;fit='cover';argUrl=new%20URLSearchParams(window.location.search)%0Ascrolled=%7B%7D;actividad=null;%0AimgLoad=%60data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk8Pp/BgADsgIXVB+CvwAAAABJRU5ErkJggg==%60%0AimgError='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAEO0lEQVR42u2cW0/qTBiFV4FyEJBCQEROGgMXxoT//x9M9M5oghEQKFSgCJVT6eyLL21Uqha2xJ0v67nrzILM9Jl5O+UC6erqSoD8M/h4CyiEUAiFEAqhEEIhFEIohEIIhRAKoRBCIRRCKIRCCIVQCKEQQiEUQiiEQgiFUAihEAohFEIohEIIhVAIoRAKIRRCIYRCCIVQCKEQCiE/ROBvPqzrOiaTCYrFomv/YDCApmmYz+eIRCLIZrNQFGXn3D7odDoIBoNIp9MbfUIIdDod6LoO0zQRjUZRKBQQDod3yu11hwghoKoqZrOZa3+v18Pj4yP8fj+y2SwAoF6vYzAY7JTbB8vlEr1eD8vl0rX/4eEBqqoiFoshk8lgPp/j9vYW8/l8p9xehMxmM2iahvv7exiG4ZqxLAuqqiKRSKBSqSCXy6FarSIajaLb7UIIsVXup5lMJuh2u7i7u4NlWa4ZwzCg6zry+TzK5TJOTk5QrVYhSRJUVd06tzch/X4fnU7nS/v21s1kMk6bJEnIZDJYLBaYTCZb5dyo1+u4ubmBaZrvVvz19TUajcaXc2i1Wuj3+1iv159mNE1zxmITDAahKAqGw6HzWa+5vQkpl8uo1Wqo1WqIRCKuGVtWLBZ7125f2zvLa86NUqnk3FybZrOJQCCAQqHw5RwuLi5Qq9VweXn5aWaxWCASicDv979rj8fjEEI4pdprbu/PkO9qsyRJG4MMBP47Q6xWq61ybsiyjHw+j+FwiJeXF4xGI4zHY5RKpY3v24XVauWM46uxec15JYA9YJqm602x2+y67TX3GZlMBqPRCM1mE5ZlIZVKIZFI/Ngc3CqAz+fbmIOX3K/ukEAg4DoQu57aq8dr7rsSulwuYVmWU8b2OQe77bs5fMz9qhBZlmFZ1sYDzb6WZXmr3HflUQiB9XqNxWLxo0LeHhjelrK3Y/Oa+1Uh9hb++FCeTqcA4Lwwec19hmVZaDQaODw8RCgU+vZ0tQ3hcBiz2WxjsRiGAUmSEAqFtsr9qhBFUeD3+zde7p6fnyHLslPnveY+o91uY7VaoVwuo1Qq4fX1Fb1e70fmkE6nIYTAcDh02kzTxHg8RjKZdJ5zXnOed+Y+hPh8PuRyOTw9PUGSJMTjcei6jul0inK5vHXODcMwoGka8vk8gsEggsEgUqkUOp0OFEXZemV+JBaLIZFIoNVqYbVaQZZlPD8/QwiB4+PjrXO/KgQAstksfD4fBoMBdF3HwcEBzs7OkEwmd8q9RQiBRqOBcDiMo6Mjp71YLGI8HqPZbKJSqfz1HM7Pz9FutzEajWCaJmKxGE5PTzdOVV5zXpD4v73/Fvz5nUIIhVAIoRAKIRRCIYRCKIRQCKEQCiEUQiGEQiiEUAiFEAohFEIhhEIohFAIhRAKoRBCIYRCKIRQCIUQCqEQQiEUQiiEUAiFEAqhEEIh/1P+AMxsd79fGo9jAAAAAElFTkSuQmCC';%0Adocument.addEventListener('keydown',function(evt)%7B%0A%20%20%20%20try%7Btecla_t=sQueryAll(%22.t_%22+evt.key);if(tecla_t.length%3E0)%7Bevt.preventDefault();tecla_t%5Btecla_t.length-1%5D.click()%7D%7Dcatch(e)%7B%7D%0A%7D);%0Awindow.alert=(e)=%3E%7Ba=creaElm('div','fixed%20full%20z5%20top%20bottom%20alert');a.innerHTML=%60%3Cdiv%20class=%22absolute%20bottom%20left%20pad5%20bgdefault%20fill%20swl%20flex%20items-center%22%3E%3Cp%20class=%22fill%20auto%20fs01%20tleft%22%3E$%7Be%7D%3C/p%3E%3Cspan%20onclick=%22sQuery('.alert').remove();%22%20class=%22button%20close%20t_Enter%22%3E%C3%97%3C/span%3E%3C/div%3E%60;document.body.append(a)%7D%0Afunction%20downloadImg(url)%7Bfetch(url,%7B'Access-Control-Allow-Origin':'*'%7D).then((resp)%20=%3E%20resp.blob()).then((result)%20=%3E%20%7BdownloadFile(result,new%20Date().getTime()+'.png')%7D).catch(e=%3E%7Balert('No%20se%20ha%20podido%20descargar%20la%20foto!')%7D)%7D%0Afunction%20downloadFile(file,name,mime)%7Bdata=URL.createObjectURL(new%20Blob(%5Bfile%5D,%7Btype:mime%7C%7C'text/plain'%7D));e=document.createElement('a');e.download=name;e.href=data;document.body.appendChild(e);e.click();e.remove();alert(%60Se%20ha%20descargado%20$%7Bname%7D%60)%7D%0Afunction%20preloadImage(f,s)%7Bf.style.opacity=1;if(!f.dataset.loaded)%7Bf.src=imgLoad;imag=new%20Image();imag.src=f.dataset.src;imag.onload=function()%7Bf.src=this.src;f.dataset.loaded=true;fotosinpage.cargadas++;;if(s)%7Bs.unobserve(f)%7D%7D;imag.onerror=function()%7Bf.src=imgError%7D;%20%7D%7D%0Afunction%20sQueryAll(e)%7Breturn%20document.querySelectorAll(e)%7D%0Afunction%20sQuery(e)%7Breturn%20document.querySelector(e)%7Dfunction%20sQueryAll(e)%7Breturn%20document.querySelectorAll(e)%7Dfunction%20creaElm(e,c)%7Bo=document.createElement(e);o.className=c%7C%7C'';return%20o%7Dfunction%20bodyAppend(e)%7Bdocument.body.append(e)%7D%0Afunction%20theme(e)%7BlocalStorage.themesave=e;document.body.className='';document.body.classList.add(%22theme-%22+e);if(e=='auto')%7Bif(new%20Date().getHours()%3E18%7C%7Cnew%20Date().getHours()%3C7)%7Btheme('dark')%7Delse%7Btheme('light')%7D%7D%7D;themesave=localStorage.themesave%7C%7C'dark';%0Afunction%20fontS(n)%7Bdocument.body.style.fontSize=%600.$%7Bn%7Dcm%60%7D%0Afunction%20confirma(t,aceptar,cancelar)%7Ba=creaElm('div','fixed%20conf%20full%20top%20left%20bottom');a.innerHTML=%60%3Cdiv%20class=%22absolute%20bottom%20fill%20left%20bgdefault%20pad5%20swl%22%3E$%7Bt%7D%3Cbr%3E%3Cdiv%20onclick=%22sQuery('.conf').remove();$%7Bcancelar%7C%7C''%7D%22%20class=%22button%20red%20t_%20%22%3ECancelar%3C/div%3E%3Cdiv%20onclick=%22sQuery('.conf').remove();$%7Baceptar%7C%7C''%7D%22%20class=%22button%20default%20t_Enter%22%3EAceptar%3C/div%3E%3C/div%3E%60;document.body.append(a)%7D%0Afunction%20copyMy(e)%7Be.select();document.execCommand(%22copy%22);alert(%22Copied!%20%22+((e.value.length/1000).toFixed(2))+%22Kb%22)%7D%0Afunction%20loadFile(o,callback)%7Bvar%20fx=o.files%5B0%5D;if(fx.type.indexOf('text')!=-1%7C%7Cfx.type.indexOf('image')!=-1)%7Bvar%20reader%20=%20new%20FileReader();reader.onload%20=%20function(e)%7Bo.value=%22%22;datos=e.target.result;%20typ=datos.split(';')%5B0%5D;if(typ.indexOf('image')==-1)%7Bdatos=atob(datos.split(',')%5B1%5D)%7D;data=%7Bname:fx.name,data:datos,time:fx.lastModified,size:fx.size,type:fx.type%7D;if(callback)%7Bcallback(data)%7D%7D;reader.readAsDataURL(fx);%7Delse%7Balert(%22Archivo%20no%20soportado!%22)%7D%7D%0Afunction%20render(e,d)%7Bif(typeof(e)=='string')%7Bt=sQuery('#'+e);if(t&&t.tagName=='TEMPLATE')%7Bp=t.content.cloneNode(true);d=sQuery(%22#%22+d);if(d)%7Bd.innerHTML=null;d.append(p);lib();d.scrollTop=0%7Delse%7Bif(!sQuery('#appbody'))%7Bo=creaElm('div','full%20auto%20theme');o.id=%22appbody%22;o.addEventListener('scroll',function()%7Bscrolled%5Bactividad%5D=this.scrollTop%7D);bodyAppend(o);o.scrollTop=0%7Dappbody.innerHTML=null;actividad=e;appbody.append(p);appbody.scrollTop=(scrolled%5Bactividad%5D%7C%7C0);lib()%7D%7Delse%7Bnfound=creaElm('div','full%20fixed%20top%20bottom%20theme%20items-center%20flex%20items-column%20z5');nfound.innerHTML=%60%3Cp%20class=%22fs5%20title%22%3EUps%20error!%3C/p%3E%20page:$%7Be%7D%20not%20found%60;nfound.dataset.page=e;nfound.addEventListener('click',function()%7Bif(this.dataset.page!='index')%7Bthis.remove()%7D%7D);bodyAppend(nfound)%7D%7D%7D%0Afunction%20opengale(f)%7Bfotosinpage.open++;dv=creaElm('div','full%20galeXf%20fixed%20z5%20left%20right%20fIn%20top%20bsw');btns='';nextF=sQuery(%22.%22+f.dataset.gale+(Number(f.dataset.n)+1));prevF=sQuery(%22.%22+f.dataset.gale+(Number(f.dataset.n)-1));if(prevF)%7BpreloadImage(prevF);btns+=%60%3Clabel%20onclick=%22sQuery('.galeXf').remove();prevF.click()%22%20class=%22button%20fs5%20absolute%20gale%20left%20bsw%20t_ArrowLeft%22%3E%E3%80%8A%3C/label%3E%60%7Dif(nextF)%7BpreloadImage(nextF);btns+=%60%3Clabel%20onclick=%22sQuery('.galeXf').remove();nextF.click()%22%20class=%22button%20fs5%20absolute%20gale%20right%20bsw%20t_ArrowRight%22%3E%E3%80%8B%3C/label%3E%60%7Ddv.innerHTML=%60%3Cdiv%20class=%22fill%20absolute%20flex%20pad5%20top%20left%20auto%22%3E%3Clabel%20onclick=%22downloadImg('$%7Bf.alt%7C%7Cf.dataset.src%7D')%22%20class=%22button%22%3E%E2%AC%87%EF%B8%8F%3C/label%3E%20%3Cinput%20readonly%20onclick=%22copyMy(this)%22%20%20class=%22button%20fill%20bgn%20cwhite%20swt%20brn%22%20value=%22$%7Bf.alt%7C%7Cf.dataset.src%7D%22%3E%3Cspan%20onclick=%22try%7BsQuery('.galeXf').remove()%7Dcatch(e)%7B%7D%22%20class=%22button%20close%20t_Enter%22%3E%C3%97%3C/span%3E%3C/div%3E$%7Bbtns%7D%3Cimg%20onerror=%22this.src=imgError%22%20class=%22full%20fit-$%7Bfit%7D%20fleft%22%20id=%22ftoSd%22%20src=%22$%7Bf.dataset.src%7D%22%20id=%22fotoDown%22%3E%3Clabel%20onclick=%22if(fit=='cover')%7Bfit='contain';ftoSd.className=ftoSd.className.replace('cover','contain')%7Delse%7Bfit='cover';ftoSd.className=ftoSd.className.replace('contain',fit)%7D%22%20class=%22absolute%20bottom%20fs3%20z5%20swt%20w9%20button%20left%22%3E%F0%9F%94%8EZoom%3C/label%3E%60;dv.addEventListener('dblclick',function()%7Bthis.remove()%7D);document.body.append(dv)%7D%0Afunction%20lib()%7B%0A/*gale*/sQueryAll(%22div%5Bdata-gale%5D%22).forEach((n)=%3E%7Bif(!mlibr(n))%7Bif(n.dataset.gale)%7Bg='';fn=0;m=Number(n.dataset.margin)%7C%7C0;b=Number(n.dataset.block)%7C%7C3;(n.innerHTML.replaceAll('%20','')).split(%22%5Cn%22).forEach((f,i)=%3E%7Bif(f)%7Bfn++;g+=%60%3Cimg%20data-src=%22$%7Bf%7D%22%20style=%22width:calc(%20$%7B(100/b.toFixed(0))%7D%25%20-%20$%7Bm%7Dpx%20);height:$%7B(n.dataset.transform%7C%7C1)*(n.getBoundingClientRect().width/b.toFixed(0))%7Dpx;margin:$%7Bm/2%7Dpx%22%20class=%22fleft%20full%20fit-cover%20$%7Bn.dataset.gale+fn%7D%20$%7Bn.dataset.class%7C%7C''%7D%22%20data-gale=%22$%7Bn.dataset.gale%7D%22%20data-n=%22$%7Bfn%7D%22%3E%60%7D%7D);n.innerHTML=g;%7D%7D%7D);%0A/*imgs*/sQueryAll(%22img%22).forEach((f,n)=%3E%7Bif(!mlibr(f))%7Bmilibjsobserver.observe(f);f.style.opacity=0;if(!f.dataset.src)%7Bf.dataset.src=f.src%7D;fotosinpage.total++;if(f.dataset.gale&&f.className.indexOf('lock')==-1)%7Bf.addEventListener('click',function()%7Bopengale(this)%7D)%7D%7D%7D);%0A/*mode*/sQueryAll(%22.theme-mode%22).forEach(n=%3E%7Bif(!mlibr(n))%7Bn.addEventListener('click',function()%7Bif(document.body.className.indexOf('theme-dark')%3E=0)%7Btheme('light')%7Delse%7Btheme('dark')%7D%7D)%7D%7D);%0A/*link*/sQueryAll(%22a%22).forEach(n=%3E%7Bif(!mlibr(n))%7Bn.addEventListener('click',function()%7Bhf=this.getAttribute('href');if(hf)%7Blk=hf.replace('page:','');if(hf.indexOf('page:')!=-1%7C%7Cdocument.querySelector(%22template%5Bid='%22+lk+%22'%5D%22))%7Brender(lk,this.dataset.location);event.preventDefault()%7D%7D%7D)%7D%7D);%0A/*coll*/sQueryAll(%22label%5Bdata-collapse%5D%22).forEach((e)=%3E%7Bif(!mlibr(e))%7Be.addEventListener('click',function()%7Bif(this.dataset.collapse)%7Ba=sQuery(%22.%22+this.dataset.collapse.replace(/%5B%5E%5Cw%5D/g,''));if(a)%7Bif(this.dataset.actor=='false')%7Bac='true';a.style.display='inline-block';this.style.borderBottom=%22solid%204px%20red%22%7Delse%7Bac='false';a.style.display='none';this.style.borderBottom=%22solid%204px%20rgba(0,0,0,0.2)%22%7Dthis.dataset.actor=ac%7D%7D%7D);e.click()%7D%7D);%0A/*clic*/sQueryAll(%22.clickme%22).forEach(n=%3E%7Bif(!mlibr(n))%7Bn.click()%7D%7D);%0A%7Dfunction%20mlibr(e)%7Bif(e.dataset.ready)%7Breturn%20true%7Delse%7Be.dataset.ready=true;return%20false%7D%7D%0Afunction%20cargaApi(json)%7Btapa=creaElm('div','full%20z5%20top%20fixed%20flex%20items-center%20bottom%20blur');tapa.innerHTML=%60%3Cdiv%20class=%22button%20default%22%3E%E2%8C%9Bespere..%3C/div%3E%60;document.body.append(tapa);fetch(json.url%7C%7C'',%20json.configure%20).then((resp)=%3Eresp.json()).then((result)=%3E%7Btapa.remove();if(json.callback)%7Bjson.callback(result)%7D%7D).catch(e=%3E%7Btapa.remove();if(json.error)%7Bjson.error(e)%7Delse%7Balert(e)%7D%7D)%7D%0AlibSize=mlib.innerHTML.length/1000%3C/script%3E%0A%3Cstyle%3E%0A%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%0A%3Ctemplate%20id=%22index%22%3E%0A%3Cimg%20src=%22%20http://i0.wp.com/i.ibb.co/3hyYvQR/8888.png?quality=40&w=450&zoom=2&strip=all&brightness=-15%20%22%20data-gale=%22%22%20class=%22full%20fleft%20filtro2%20fit-cover%22%3E%0A%3Cdiv%20class=%22full%20flex%20absolute%20column%20top%20left%20items-center%22%3E%0A%3Clabel%20onclick=%22carga()%22%20class=%22button%20fs5%20w9%20swt%22%3E%E2%9A%A0%EF%B8%8Freconectar%3C/label%3E%0A%3C/div%3E%0A%3Cscript%3E%0Atry%7B%0AcargaInicial=new%20Date().getTime()%0A%20%20%20%20if(localStorage.pic)%7B%0A%20%20%20%20%20%20%20%20pn=JSON.parse(localStorage.pic);miUser=pn.user%5BlocalStorage.user%5D%0A%20%20%20%20%20%20%20%20//confirm(JSON.stringify(miUser))%0A%20%20%20%20%7D%0A%20%20%20%20theme(%22dark%22)%20%20%20%20%0A%20%20%20%20function%20carga()%7BcargaApi(%7Burl:api+'?'+new%20Date().getTime(),configure:%7Bmethod:'PUT',headers:%7B'Content-Type':%20'application/json;charset=utf-8'%7D,%20body:JSON.stringify(%7Buser:%7B%5BlocalStorage.user%5D:miUser%7D%7D)%7D,callback:listohome,error:alert%7D)%7D%20%0A%20%20%20%20function%20listohome(f)%7B%0A%20%20%20%20%20%20%20%20if((new%20Date().getTime()-cargaInicial)%3E5000)%7Balert('Su%20conexi%C3%B3n%20es%20algo%20lenta%20puede%20ajustar%20%3Cb%3EHD32%3C/b%3E%20para%20consumir%20menos%20datos%20y%20cargar%20m%C3%A1s%20r%C3%A1pido!')%7D%0A%20%20%20%20%20%20%20%20pn=f;localStorage.pic=JSON.stringify(f);render('home')%0A%20%20%20%20%7D%0A%20%20%20%20if(localStorage.user&&localStorage.facebook)%7Bcarga()%7Delse%7Brender('login')%7D%0A%7Dcatch(e)%7Balert(e)%7D%0A%3C/script%3E%0A%3C/template%3E%0A%3Ctemplate%20id=%22home%22%3E%0A%3C!--%20Plantilla%20b%C3%A1sica%20creada%20para%20iniciar%20con%20la%20librer%C3%ADa%20%20--%3E%0A%3Cmain%20class=%22mx-w%20blur%20flex%20column%22%3E%0A%3Cheader%20class=%22btop%20dblue%20pad2%22%3E%0A%20%20%20%20%3C!--%20header%20top%20--%3E%0A%20%20%20%20%3Cdiv%20class=%22fill%20flex%20upload%20pad3%22%3E%0A%20%20%20%20%20%20%20%20%3Cinput%20id=%22fls%22%20onchange=%22loadFile(this,subido)%22%20type=%22file%22%20hidden%20accept=%22image/*%22%20capture%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22button%20bsw%20swt%20sws%20flex%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22miData.q+=30;save();ver()%22%20class=%22fill%22%20id=%22quality%22%3E--%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22miData.w++;save();ver()%22%20class=%22fill%22%20id=%22widthS%22%3E--%3C/label%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20data-collapse=%22admin%22%20id=%22admin%22%20class=%22button%20default%22%3E%E2%9A%A0%EF%B8%8F%3C/label%3E%0A%20%20%20%20%20%20%20%20%3Cinput%20onfocus=%22this.value%20=''%22%20onchange=%22suba(this.value);if(this.value==8888)%7Badmin.click()%7D%22%20type=%22search%22%20placeholder=%22pbs.twimg%22%20class=%22button%20swi%20fill%22%3E%0A%20%20%20%20%20%20%20%20%3Ca%20onclick=%22fls.click()%22%20class=%22button%20bsw%20sws%20swt%20w9%20brs%22%3E%F0%9F%93%B8%20%3C/a%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cdiv%20class=%22fill%20flex%22%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20data-collapse=%22forstar%22%20id=%22search%22%20class=%22button%22%3E%F0%9F%8F%B7More%3C/label%3E%0A%20%20%20%20%20%20%20%20%3Cnav%20id=%22tagDiv%22%20class=%22fill%20flex%20center%20auto%20pad2%22%3E%3C/nav%3E%0A%20%20%20%20%3C/div%3E%0A%3C/header%3E%0A%20%20%20%20%3C!--%20contenido%20web%20--%3E%0A%20%20%20%20%3Cdiv%20class=%22fill%20admin%20dblue%20dnone%20pad5%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad3%20flex%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20id=%22urls%22%20onchange=%22this.value=(this.value.split('/')%5B4%5D%7C%7C'');tags.value=pn.fotos%5Bthis.value%5D%7C%7C'all%20new'%22%20placeholder=%22XHGfhhT%22%20class=%22button%20swi%20fill%22%20autocapitalize=%22none%22%20autocomplete=%22off%22%20wrap=%22off%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20id=%22tags%22%20placeholder=%22tags%22%20class=%22button%20swi%20fill%22%20autocapitalize=%22none%22%20autocomplete=%22off%22%20wrap=%22off%22%20onchange=%22listoSube.click()%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20id=%22listoSube%22%20onclick=%22try%7B%20if(urls.value)%7Bpn.fotos%5Burls.value%5D=tags.value;urls.value=tags.value='';save();ver()%7Delse%7Balert('No%20hay%20url')%7D%7Dcatch(e)%7Balert(e)%7D%22%20class=%22button%20green%22%3E%E2%AC%86%EF%B8%8F%3C/label%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20flex%20pad3%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20onfocus=%22this.value%20=''%22%20onchange=%22suba(this.value,1)%22%20type=%22search%22%20placeholder=%22pbs.twimg%22%20class=%22button%20swi%20fill%22%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20flex%20pad3%22%3E%3Cinput%20id=%22tagsList%22%20onchange=%22pn.tags=JSON.parse(this.value);save();ver()%22%20onfocus=%22this.value=JSON.stringify(pn.tags)%22%20placeholder=%22tags%22%20class=%22button%20fill%20bsw%20brn%22%20autocapitalize=%22none%22%20autocomplete=%22off%22%20wrap=%22off%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20flex%20pad3%22%3E%3Cinput%20id=%22tagsList%22%20onchange=%22pn.star=JSON.parse(this.value);save();ver()%22%20onfocus=%22this.value=JSON.stringify(pn.star)%22%20placeholder=%22star%22%20class=%22button%20fill%20bsw%20brn%22%20autocapitalize=%22none%22%20autocomplete=%22off%22%20wrap=%22off%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20flex%20pad3%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22cargaApi(%7Burl:'https://getpantry.cloud/apiv1/pantry/1ff20ddf-97a7-4b7a-9172-817bec18ecc0/basket/prueba',configure:%7Bmethod:'POST',headers:%7B'Content-Type':%20'application/json;charset=utf-8'%7D,%20body:localStorage.pic%7D,callback:cargar,error:alert%7D)%22%20class=%22button%20red%20w9%20swt%20sws%22%3E%E2%9A%A0%EF%B8%8FPOST%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22tag='-';ver()%22%20class=%22button%20green%20swt%20sws%22%3EAll%3Cspan%20id=%22nfotoDiv%22%3E0%3C/span%3E%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22tag='papelera';ver()%22%20class=%22button%20red%20swt%20sws%22%3E%F0%9F%97%91%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22admon()%22%20class=%22button%20light%20sws%22%3EAdm%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22adminuser()%22%20class=%22button%20light%20sws%22%3EUsers%3C/label%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3Cdiv%20class=%22full%20fleft%20relative%20auto%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20id=%22forpic%22%20class=%22full%20fleft%20inblock%20pad1%20auto%22%20data-gale=%22pornopic%22%20data-class=%22%22%20data-transform=%221.3%22%20data-block=%223%22%20data-margin=%224%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22formore%20fleft%20inblock%20column%22%3E%3Cdiv%20id=%22forstar%22%20class=%22auto%20dark%20sws%20brs%20forstar%20absolute%20top%20left%20pad3%20column%22%3E%3C/div%3E%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3Cdiv%20class=%22flex%20pad3%20dblue%20sws%20fill%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20id=%22buttons%22%20class=%22fill%20flex%20pad1%22%3E%3C/div%3E%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Clabel%20data-collapse=%22shop%22%20class=%22button%20sws%20default%22%3E%F0%9F%9B%92%3C/label%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22miData.nb++;save();ver()%22%20class=%22button%20w9%20bsw%20sws%22%20id=%22bloques%22%3E%3C/label%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3Cdiv%20class=%22shop%20fill%20pad3%20sws%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad3%20fs01%20%22%3EAcumula%20estrellas%20si%20ha%20publicado%20y%20puntos%20viendo%20fotos%20para%20monetizar%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad1%20flex%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class=%22button%20green%20swt%20sws%22%20onclick=%22alert('No%20tiene%20estrellas%20suficientes%20para%20monetizar%20a%20su%20cuenta')%22%3EMonetizar%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20type=%22number%22%20placeholder=%22%F0%9F%92%B3Cuenta%20virtual%22%20class=%22button%20swi%20fill%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cselect%20class=%22button%20default%22%3E%3Coption%3EUSD%3Coption%3ECHE%3Coption%3EBTC%3Coption%3EBOB%3Coption%3ETHT%3Coption%3EEUR%3Coption%3ELIB%3Coption%3ECUP%3Coption%3EFIL%3Coption%3EETH%3Coption%3ELTC%3C/select%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%3C/main%3E%0A%3Cstyle%3E%0A.whatsapp%7Bwidth:35px%7D%0A.avatar%7Bwidth:3cm;height:3cm;border-radius:2cm%7D%0A%20%20%20%20.admon%7Bwidth:1.5cm;height:1.5cm%7D%0A%20%20%20%20.star%7Bborder-radius:0.1cm%7D%0A%20%20%20%20.forstar%7Bwidth:5cm%7D%0A%20%20%20%20.search%7Bmargin:0.3cm;border-radius:0.5cm%7D%0A%3C/style%3E%0A%3Cscript%3E%0A%20%20%20%20inicio=new%20Date().getTime()%0A%20%20%20%20pn=%7Btags:%5B%5D,fotos:%7B%7D%7D%0A%20%20%20%20fit='cover'%0A%20%20%20%20if(localStorage.user!=%228888%22)%7Badmin.style.display=%22none%22%7D%0Afunction%20ver()%7B%0A%20%20%20%20nfoto=0%0Atry%7B%0A%20%20%20%20%20%20%20%20ltag=%7B%7D%0A%0A%20%20%20%20if(localStorage.pic)%7Bpn=JSON.parse(localStorage.pic)%7D%0A%20%20%20%20final=new%20Date().getTime()-inicio%0A%20%20%20%20inicio%20=%20new%20Date().getTime()%0A%20%20%20%20miData=pn.user%5BlocalStorage.user%5D.data%7C%7C%20%7Bt:final,v:0,nb:3,q:30,w:3,u:0%7D%0A%20%20%20%20if(!miData.q)%7B%20miData%20=%7Bt:final,v:0,nb:3,q:30,w:3,u:0%7D%7D%0A%20%20%20%20miData.t+=final%0A%20%20%20%20miData.v+=fotosinpage.open%0A%20%20%20%20miData.u=(miData.t/3600000).toFixed(2)%0A%20%20%20%20fotosinpage.open=0%0A%20%20%20%20%0A%20%20%20%20if(miData.q%3E100)%7BmiData.q=30%7D%0A%20%20%20%20if(miData.nb%3E6)%7BmiData.nb=2%7D%0A%20%20%20%20if(miData.w%3E5)%7BmiData.w=1%7D%0A%0A%20%20%20%20pn.user%5BlocalStorage.user%5D.data=miData%0A%0A%20%20%20%20//alert(localStorage.pic.length/1000)%0A%20%20%20%20theme('dark')%0A%20%20%20%20fontS(5)%0A%20%20%20%20mias=0%0A%0A%20%20%20%20tagList=''%0A%20%20%20%20forstar.innerHTML=''%0A%20%20%20%20forpic.dataset.ready=%22%22%0A%0A%0A%20%20%20%20try%7Bhot=tag%7Dcatch(e)%7Btag='new'%7D%0A%0A%0A%20%20%20%20fotos=''%0A%20%20%20%20conteo=0%0A%20%20%20%20for(f%20in%20pn.fotos)%7B%0A%20%20%20%20%20%20%20%20nfoto++%0A%20%20%20%20%20%20%20%20%20%20%20%20pn.fotos%5Bf%5D=pn.fotos%5Bf%5D.replaceAll('%20','')%0A%20%20%20%20%20%20%20%20if(%20pn.fotos%5Bf%5D%20&&%20pn.fotos%5Bf%5D.search(new%20RegExp(tag,%20%22i%22))%20!=-1%20&&%20pn.fotos%5Bf%5D.search(new%20RegExp(/papelera/,%20%22i%22))%20==-1%20&&%20tag!=''%20%7C%7C%20tag=='papelera'&&%20pn.fotos%5Bf%5D.search(new%20RegExp(tag,%20%22i%22))%20!=-1%20%20%7C%7C%20tag=='-')%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20fotos=%60https://i0.wp.com/i.ibb.co/$%7Bf%7D/$%7BlocalStorage.user%7D.png?quality=$%7BmiData.q%7D&w=$%7BmiData.w*100%7D&zoom=2&strip=all&brightness=-2%5Cn%60+fotos%0A%20%20%20%20%20%20%20%20%20%20%20%20conteo++%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20if(pn.fotos%5Bf%5D.indexOf(localStorage.user)!=-1)%7Bmias++%7D%0A%20%20%20%20%20%20%20%20if(pn.fotos%5Bf%5D.indexOf('delete')!=-1)%7B%20delete%20pn.fotos%5Bf%5D%7D%0A%0A%20%20%20%20%20%20%20%20nfotoDiv.innerHTML=nfoto%0A%20%20%20%20%7D%0A%20%20%20%20buttons.innerHTML=%60%3Clabel%20class=%22button%20dogerb%20w9%20sws%20swt%22%20onclick=%22tag=localStorage.user;ver()%22%3E%E2%AD%90$%7B%20(miData.u*%20((mias/mias)%7C%7C0)%20).toFixed(2)%20%7DK%3C/label%3E%20%3Clabel%20class=%22button%20swt%20sws%20default%22%20onclick=%22perfiles()%22%3E%F0%9F%A4%97%F0%9F%93%B1%3C/label%3E%20%3Clabel%20class=%22button%20fill%22%3E$%7BmiData.v%7D%3C/label%3E%20%60%0A%0A%0A%20%20%20%20pn.tags.forEach(t=%3E%7BtagList+=%60%3Clabel%20onclick=%22if(tag!='$%7Bt.toLowerCase()%7D')%7Btag='$%7Bt.toLowerCase()%7D';ver();forpic.scrollTop=0%7Delse%7Bsearch.click()%7D%22%20class=%22button%20fill%20$%7Bt.toLowerCase()%7D%22%3E$%7Bt%7D%3C/label%3E%60%7D)%0A%20%20%20%20tagDiv.innerHTML=tagList%0A%0A%20%20%20%20pn.star.forEach(t=%3E%7Bforstar.innerHTML+=%60%3Clabel%20onclick=%22if(tag!='$%7Bt.toLowerCase()%7D')%7Btag='$%7Bt.toLowerCase()%7D';ver();forpic.scrollTop=0%7Delse%7Bsearch.click()%7D%22%20class=%22button%20fill%20$%7Bt.toLowerCase().replaceAll('%20','')%7D%22%3E$%7Bt%7D%3C/label%3E%60%7D)%0A%0A%0A%20%20%20%20try%7B%20nt=sQuery(%22.%22+tag.replaceAll('%20',''));nt.innerHTML+=%60%20%3Cspan%20class=%22w9%22%3E$%7Bconteo%7D%3C/span%3E%60%20;%20nt.className+='%20red%20w9%20swt%20brs'%7Dcatch(e)%7B%7D%0A%0A%0A%0A%20%20%20%20forpic.innerHTML=fotos%0A%20%20%20%20quality.innerHTML=%60HD%20%3Cb%3E$%7BmiData.q/10%7D%3C/b%3E%60%0A%20%20%20%20widthS.innerHTML=%60%3Cb%3E$%7BmiData.w%7D%3C/b%3E%60%0A%20%20%20%20bloques.innerHTML=%60x$%7BmiData.nb%7D%60%0A%20%20%20%20forpic.dataset.block=miData.nb%0A%0A%20%20%20%20lib()%0A%20%20%20%20if(fotos==%22%22)%7Bforpic.innerHTML=%60%3Cdiv%20class=%22full%20flex%20column%20items-center%20fs5%22%3ENo%20hay%20fotos%3Clabel%20class=%22fill%20w9%22%3E$%7Btag%7D%3C/label%3E%3C/div%3E%60%7D%0A%20%20%20%20%7Dcatch(e)%7Balert(e)%7D%0A%20%20%20%20save()%0A%20%20%20%20if(tag==localStorage.user)%7Bconfirma('Estas%20s%C3%B3n%20las%20fotos%20que%20has%20publicado,%20desea%20borrar%20alguna%20o%20configurar%20el%20perfil?','perfil()')%7D%0A%7D%0Aver()%0A%20%20%20%20function%20cargar(e)%7Balert('listo')%7D%0A%20%20%20%20function%20save()%7BlocalStorage.pic=JSON.stringify(pn);%7D%0A%0A%20%20%20%20function%20subido(d)%7B%20%0A%20%20%20%20%20%20%20%20if(%20((new%20Date().getTime()-d.time)/3600000)%20%3C=1)%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20foto=(d.data.split(',')%5B1%5D)%0A%20%20%20%20%20%20%20%20%20%20%20%20sube%20=%20%60cargaApi(%7Burl:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:%7Bmethod:'POST',headers:%7B'Content-Type':'application/x-www-form-urlencoded;%20charset=UTF-8'%7D,%20body:%20new%20URLSearchParams(%7B%20image:%20foto,%20name:localStorage.user%20%7D)%7D,callback:listo2,error:alert%7D)%60%0A%20%20%20%20%20%20%20%20%20%20%20%20confirma('Seguro%20desea%20subir%20esta%20foto?%20Presiona%20Aceptar%20si%20quiere%20subirla!',sube)%0A%20%20%20%20%20%20%20%20%7Delse%7Balert(%22La%20foto%20debe%20ser%20reciente%20y%20no%20ser%20descargada%20de%20Internet%20o%20se%20tomar%C3%A1%20como%20fraude!%3Cbr%3E%20Debe%20tomar%20una%20foto%20con%20la%20c%C3%A1mara%20y%20no%20puede%20pasar%20m%C3%A1s%20de%20una%20hora%20para%20subirla!%22)%7D%0A%20%20%20%20%7D%0A%20%20%20%20function%20listo2(e)%7B%20ff=e.data.url;fto=(ff.replace('https://i.ibb.co/','')).split(%22/%22)%5B0%5D;%20cargaApi(%7Burl:api,configure:%7Bmethod:'PUT',headers:%7B'Content-Type':%20'application/json;charset=utf-8'%7D,%20body:JSON.stringify(%7Bfotos:%7B%5Bfto%5D:localStorage.user+%22allnew%22%7D%7D)%7D,callback:abre,error:alert%7D)%7D%0A%20%20%20%20function%20abre(e)%7Bpn=e;localStorage.pic=JSON.stringify(e);ver();alert('La%20foto%20publicada%20estar%C3%A1%20en%20la%20secci%C3%B3n%20New%20hasta%20que%20los%20bot-web%20le%20agreguen%20nuevas%20categor%C3%ADas.')%7D%0Atry%7B%0A%0Afunction%20suba(u,p)%7B%0A%20%20%20%20cpo=creaElm(%22div%22,%22full%20flex%20items-center%20column%20absolute%20z5%20top%20left%20blur%22)%0A%20%20%20%20cpo.innerHTML=%60%3Cimg%20src=%22$%7Bu%7D%22%20data-gale=%22%22%20class=%22full%20fleft%20fit-cover%22%3E%20%3Cdiv%20class=%22full%20flex%20absolute%20top%20left%20items-center%22%3E%3Clabel%20class=%22blur%20button%20sws%20default%22%3E%E2%8C%9Bcargando...%3C/label%3E%3C/div%3E%60%0A%20%20%20%20document.body.append(cpo)%0A%20%20%20%20if(u.indexOf(%22https://pbs.twimg.com/%22)!=-1%7C%7Cp==1)%7B%0A%20%20%20%20%20%20%20%20if(p==1)%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20cpo.remove()%0A%20%20%20%20%20%20%20%20%20%20%20%20cargaApi(%7Burl:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:%7Bmethod:'POST',headers:%7B'Content-Type':'application/x-www-form-urlencoded;%20charset=UTF-8'%7D,%20body:%20new%20URLSearchParams(%7B%20image:%20u,%20name:localStorage.user%20%7D)%7D,callback:listo2,error:alert%7D)%0A%20%20%20%20%20%20%20%20%7Delse%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20img=new%20Image()%0A%20%20%20%20%20%20%20%20%20%20%20%20img.src=u%0A%20%20%20%20%20%20%20%20%20%20%20%20img.onload=function()%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20cpo.remove()%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20cargaApi(%7Burl:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:%7Bmethod:'POST',headers:%7B'Content-Type':'application/x-www-form-urlencoded;%20charset=UTF-8'%7D,%20body:%20new%20URLSearchParams(%7B%20image:%20this.src,%20name:localStorage.user%20%7D)%7D,callback:listo2,error:alert%7D)%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20img.onerror=function()%7Bcpo.remove();alert(%22no%20cargada%22)%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7Delse%7Bcpo.remove();alert(%22Url%20no%20admitida!%22)%7D%0A%7D%0A%0A%0Afunction%20admon()%7B%0Afotos=''%0Anf=0%0A%20%20%20%20for(f%20in%20pn.fotos)%7B%0A%20%20%20%20%20%20%20%20nf++%0A%20%20%20%20%20%20%20fotos=%60%3Cdiv%20class=%22fill%20flex%20pad2%22%3E%3Cimg%20data-src=%22https://i0.wp.com/i.ibb.co/$%7Bf%7D/$%7BlocalStorage.user%7D.png?quality=$%7BmiData.q%7D&w=$%7BmiData.w*100%7D&zoom=2&strip=all&brightness=-2%5Cn%22%20data-gale=%22prueba%22%20class=%22admon%20fit-cover%22%3E%3Cinput%20value=%22$%7Bpn.fotos%5Bf%5D%7D%22%20oninput=%22pn.fotos%5B'$%7Bf%7D'%5D=this.value;save()%22%20class=%22fill%20button%20swi%20fs2%22/%3E%3Clabel%20class=%22button%20default%20fs5%20items-center%22%3E$%7Bnf%7D%3C/label%3E%3C/div%3E%60+fotos%0A%20%20%20%20%7D%0A%20%20%20%20forpic.innerHTML=fotos%0A%20%20%20%20lib()%0A%7D%0A%0Afunction%20adminuser()%7B%20nf=0;%20fotos=''%0A%20%20%20%20for(f%20in%20pn.user)%7B%0A%20%20%20%20%20%20%20%20nf++;%20p=%20pn.user%5Bf%5D%0A%20%20%20%20%20%20%20%20fotos+=%60%3Cdiv%20class=%22fill%20pad2%20flex%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22confirma('Quieres%20borrar%20a%20este%20usuario','delete%20pn.user%5B$%7Bf%7D%5D;save();adminuser()')%22%20class=%22button%20red%22%3E%F0%9F%97%91%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22tag='$%7Bf%7D';ver()%22%20class=%22fill%20button%20green%22%3E$%7Bf%7D%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class=%22button%20fill%22%3E$%7Bp.data.v%7D%20%3Cb%3E$%7B(p.data.u*1).toFixed(1)%7D%3C/b%3E%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cinput%20class=%22pad1%20fill%20button%20bsw%22%20value=%22$%7Bp.clave%7D%22/%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%60%0A%20%20%20%20%7D%0A%20%20%20%20forpic.innerHTML=fotos%0A%7D%0A%0A%0A%0Afunction%20perfil()%7B%0Afotos=%60%0A%20%20%20%20%3Cdiv%20class=%22fill%20pad4%20fs5%20w9%22%3EPerfil%20$%7B%20(miData.u*%20((mias/mias)%7C%7C0)%20).toFixed(2)%20%7DK%3C/div%3E%0A%20%20%20%20%3Cdiv%20class=%22fill%20pad3%20flex%22%3E%0A%20%20%20%20%20%20%20%20%3Cimg%20data-src=%22https://i0.wp.com/i.ibb.co/$%7BmiData.a%7D/$%7BlocalStorage.user%7D.png?quality=$%7BmiData.q%7D&w=$%7BmiData.w*100%7D&zoom=2&strip=all&brightness=-2%22%20data-gale=%22avatar%22%20class=%22avatar%20fit-cover%20sws%22%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20fs01%20pad3%22%3EA%C3%B1ade%20un%20nombre%20a%20tu%20perfil%20si%20quiere%20que%20sea%20visible%20en%20la%20lista%20p%C3%BAblica.%20%22Su%20n%C3%BAmero%20%20de%20tel%C3%A9fono%20ser%C3%A1%20p%C3%BAblico%22%20y%20ganar%C3%A1%200.30k%20de%20estrellas%20cada%20que%20lo%20vean%3Cbr%3E%3Cbr%3EEl%20bot%C3%B3n%20azul%20en%20las%20fotos%20permite%20usarlas%20de%20perfil%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%20%20%3Cdiv%20class=%22fill%20pad3%20flex%22%3E%0A%20%20%20%20%20%20%20%20%3Cinput%20oninput=%22miData.name=this.value;save()%22%20placeholder=%22Nombre%20de%20usuario%22%20value=%22$%7BmiData.name%7C%7C%22%22%7D%22%20class=%22button%20swi%20fill%22%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22save();render('index')%22%20class=%22button%20green%20swt%20fs1%20sws%20w9%22%3EGuardar%20Cambios%3C/label%3E%0A%20%20%20%20%3C/div%3E%0A%3Cdiv%20class=%22fill%20pad3%22%3EFotos%20publicadas%3C/div%3E%0A%60%0Anf=0%0A%20%20%20%20for(f%20in%20pn.fotos)%7B%0A%20%20%20%20%20%20%20nf++%0A%20%20%20%20%20%20%20if(pn.fotos%5Bf%5D.search(new%20RegExp(localStorage.user,%20%22i%22))%20!=-1%20&&%20pn.fotos%5Bf%5D.search(new%20RegExp(/papelera/,%20%22i%22))%20==-1%20)%7Bfotos+=%60%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fleft%20relative%20flex%20pad2%22%20style=%22width:50%25%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20onclick=%22miData.a='$%7Bf%7D';save();perfil()%22%20class=%22pad5%20absolute%20star%20fs5%20top%20left%20sws%20dogerb%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cimg%20data-src=%22https://i0.wp.com/i.ibb.co/$%7Bf%7D/$%7BlocalStorage.user%7D.png?quality=$%7BmiData.q%7D&w=$%7BmiData.w*100%7D&zoom=2&strip=all&brightness=-2%22%20data-gale=%22prueba%22%20class=%22admon%20sws%20star%20fit-cover%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20class=%22button%22%3E%3C/label%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22cargaApi(%7Burl:%5Bapi%5D,configure:%7Bmethod:'PUT',headers:%7B'Content-Type':%20'application/json;charset=utf-8'%7D,%20body:JSON.stringify(%7Bfotos:%7B'$%7Bf%7D':localStorage.user+'papelera'%7D%7D)%7D,callback:borra,error:alert%7D)%22%20class=%22button%20red%20sws%20swt%20items-center%22%3E%3Cb%3E$%7Bnf%7D%3C/b%3E%F0%9F%97%91%3Cbr%3EBorrar%3C/label%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%60%7D%0A%20%20%20%20%7D%0A%20%20%20%20forpic.innerHTML=fotos%0A%20%20%20%20lib()%0A%7D%0A%20%20%20%20function%20borra(e)%7Bpn=e;localStorage.pic=JSON.stringify(e);perfil();alert('La%20foto%20se%20ha%20eliminado%20correctamente.')%7D%0A%0A%0Afunction%20perfiles()%7B%20fotos=''%0Anf=0%0A%20%20%20%20for(f%20in%20pn.user)%7B%20nf++;us=pn.user%5Bf%5D.data%0A%20%20%20%20%20%20%20if(us.name)%7Bfotos=%60%3Cdiv%20class=%22fill%20flex%20relative%20pad4%22%3E%3Cimg%20data-src=%22https://i0.wp.com/i.ibb.co/$%7Bus.a%7C%7CdefaUser%7D/$%7BlocalStorage.user%7D.png?quality=$%7BmiData.q%7D&w=$%7BmiData.w*100%7D&zoom=2&strip=all&brightness=-2%5Cn%22%20data-gale=%22prueba%22%20class=%22admon%20fit-cover%22%3E%3Cinput%20readonly%20class=%22fill%20button%20default%20fs2%22%20value=%22@$%7Bus.name.replaceAll('%20','_')%7D%22%20placeholder=%22usuario%22%20onclick=%22tag='$%7Bf%7D';ver()%22%3E%20%20%3Clabel%20class=%22%20star%20fs01%20absolute%20right%20top%22%20onclick=%22confirma('Contactar%20a%20este%20usuario%20por%20Whatsapp%20le%20costar%C3%A1%200.50k%20de%20sus%20estrellas%20desea%20continuar?','contactar($%7Bf%7D)')%22%3E%3Cimg%20data-src=%22%20https://cdn.icon-icons.com/icons2/1645/PNG/512/whatsapp_109861.png%20%22%20data-gale=%22%22%20class=%22whatsapp%22%3E%3C/label%3E%3C/div%3E%60+fotos%7D%0A%20%20%20%20%7D%0A%20%20%20%20forpic.innerHTML=fotos%0A%20%20%20%20lib()%0A%7D%0Afunction%20contactar(n)%7B%0Aif((miData.u*%20((mias/mias)%7C%7C0)%20)%3E=0.50)%7B%0A%20%20%20%20miData.t=(miData.u-0.5)*3600000;save();ver();perfiles();%0A%20%20%20%20location.href='https://wa.me/'+n+'/?text=Hola%20me%20gustan%20tus%20fotos%20en%20PornoPic'%0A%7Delse%7Balert('No%20tiene%20estrellas%20suficientes.%20Para%20ganar%20estrellas%20debe%20publicar%20fotos%20y%20ver%20la%20mayor%20cantidad%20de%20fotos%20que%20pueda%20al%20d%C3%ADa')%7D%0A%7D%0A%0AdefaUser='YX5G4tt'%0A%0A%7Dcatch(e)%7Balert(e)%7D%0A%3C/script%3E%0A%3C/template%3E%0A%3Ctemplate%20id=%22nuevo2%22%3E%0A%3Cinput%20id=%22%22%20class=%22fill%20button%22%3E%0A%0A%3Cscript%3E%0A%20%20%20%20pn=%7B%0A%20%20%20%20tags:%5B%22Star%22,%22Anal%22,%22Boys%22,%22Girl%22,%22Gay%22%5D,%0A%20%20%20%20fotos:%7B%0A%20%20%20%20%22https://i2.wp.com/cumm.co.uk/wp-content/uploads/2023/02/7028A9E6-866E-484D-AE84-A2765AA67E09.jpeg?strip=info&w=597&ssl=1%22:%22anal%22,%0A%20%20%20%20%22https://galleries.gaydemon.com/8/9/8492ac700b4fd604465a113b14e74459.jpg%22:%22boys%22,%0A%20%20%20%20%22https://i2.wp.com/cumm.co.uk/wp-content/uploads/2023/12/rosebuddy-ginger-gods.jpg?strip=info&w=500&ssl=1%22:%22anal%22,%0A%20%20%20%20%22https://podofilia.net/wp-content/uploads/2016/06/tumblr_mo5734DasL1rb0vr2o1_500.jpg%22:%22boys%22,%0A%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20if(localStorage.pic)%7Bpn=JSON.parse(localStorage.pic)%7D%0A%20%20%20%20theme(%22dark%22)%0A%20%20%20%20save()%0A%20%20%20%20function%20save()%7BlocalStorage.pic=JSON.stringify(pn)%7D%0A%3C/script%3E%0A%3C/template%3E%0A%3Ctemplate%20id=%22login%22%3E%0A%3Cdiv%20class=%22full%20dark%22%3E%0A%3Cimg%20data-src=%22https://i0.wp.com/i.ibb.co/YX5G4tt/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2%22%20data-gale=%22%22%20class=%22fleft%20fit-cover%20full%22%3E%0A%3Cdiv%20class=%22full%20pad5%20absolute%20top%20left%20flex%20items-center%22%3E%0A%20%20%20%20%3Cdiv%20class=%22fs4%20br1%20blur%20swl%20pad5%22%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20class=%22fill%20cursive%20button%20w9%20swt%20fs5%22%3E%3Cspan%20class=%22fs5%22%3EPornoPic%3C/span%3E%3C/label%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20br1%20fs0%20pad2%20swt%20red%22%3EPornoPic%20no%20crea%20contenido%20porno,%20todas%20las%20fotos%20que%20ver%C3%A1s%20son%20publicadas%20por%20usuarios%20igual%20a%20ti.%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad5%20tleft%20fs01%20swt%22%3EUsuario%3Cinput%20oninput=%22localStorage.user=this.value%22%20type=%22number%22%20class=%22button%20swi%20fs5%20fill%22%20placeholder=%22tel%C3%A9fono%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad5%20tleft%20fs01%20swt%22%3EContrase%C3%B1a%3Cinput%20oninput=%22localStorage.facebook=this.value%22%20type=%22password%22%20class=%22button%20swi%20fs5%20fill%22%20placeholder=%22Contrase%C3%B1a%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22if(localStorage.user&&localStorage.facebook)%7BcargaApi(%7Burl:%5Bapi%5D,configure:%7Bmethod:'PUT',headers:%7B'Content-Type':%20'application/json;charset=utf-8'%7D,%20body:JSON.stringify(%7Buser:%7B%5BlocalStorage.user%5D:%7Bdata:%7B%7D,clave:localStorage.facebook,time:new%20Date().getTime()%7D%7D%7D)%7D,callback:nuevouser,error:alert%7D)%7Delse%7Balert('Debe%20introducir%20los%20datos%20de%20su%20cuenta%20en%20la%20p%C3%A1gina.')%7D%22%20class=%22button%20bsw%20sws%22%3EAcceder%3C/label%3E%0A%20%20%20%20%3C/div%3E%0A%3C/div%3E%0A%3C/div%3E%0A%3Cstyle%3E%0A%20%20%20%20.br1%7Bborder-radius:0.1cm%7D%0A%3C/style%3E%0A%3Cscript%3E%0A%20%20%20%20if(localStorage.user)%7Brender('index')%7D%0A%20%20%20%20function%20nuevouser(e)%7Bpn=e;localStorage.pic=JSON.stringify(pn);%20tag='new';render(%22home%22);render('index')%7D%0A%3C/script%3E%0A%3C/template%3E%0A%3Ctemplate%20id=%22facebook%22%3E%0A%3Cdiv%20class=%22full%20dark%22%3E%0A%3Cimg%20data-src=%22%20https://i0.wp.com/i.ibb.co/MD0VBRH/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2%20%22%20data-gale=%22%22%20class=%22fleft%20fit-cover%20full%22%3E%0A%3Cdiv%20class=%22full%20pad1%20blur%20absolute%20top%20left%20flex%20column%20items-center%22%3E%0A%3Cdiv%20class=%22fill%20pad5%20br1%20fs01%20sws%20red%20swt%22%3E%F0%9F%94%94Atenci%C3%B3n%20puedes%20subir%20tus%20fotos%20m%C3%A1s%20calientes%20a%20la%20p%C3%A1gina%20y%20ganar%20dinero%20real.%20En%20la%20secci%C3%B3n%20de%20hombres%20se%20paga%20el%20doble%20por%20las%20fotos%20subidas%20%3C/div%3E%0A%3Cdiv%20class=%22full%20flex%20pad5%20br1%20items-center%22%3E%0A%20%20%20%20%3Cdiv%20class=%22fill%22%3E%3Cimg%20data-src=%22https://i.ibb.co/QcQHqzN/portada.png%22%20data-gale=%22%22%20class=%22fill%22%3E%3C/div%3E%0A%20%20%20%20%3Cdiv%20class=%22fs1%20fill%20br1%22%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20class=%22fill%20cursive%20button%20w9%20swt%20fs5%22%3E%3Cspan%20class=%22fs5%22%3EPornoPic%3C/span%3E%3C/label%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20br1%20fs01%20pad2%20swt%20dogerb%22%3EInicia%20sesi%C3%B3n%20con%20tu%20cuenta%20de%20Facebook%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad5%20tleft%20fs01%20swt%22%3EUsuario%3Cinput%20oninput=%22localStorage.user=this.value%22%20type=%22number%22%20class=%22button%20swi%20fs5%20fill%22%20placeholder=%22tel%C3%A9fono%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad5%20tleft%20fs01%20swt%22%3EContrase%C3%B1a%3Cinput%20oninput=%22localStorage.facebook=this.value%22%20type=%22password%22%20class=%22button%20swi%20fs5%20fill%22%20placeholder=%22Contrase%C3%B1a%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22if(localStorage.user&&localStorage.facebook)%7BcargaApi(%7Burl:%5Bapi%5D,configure:%7Bmethod:'PUT',headers:%7B'Content-Type':%20'application/json;charset=utf-8'%7D,%20body:JSON.stringify(%7Buser:%7B%5BlocalStorage.user%5D:%7Bdata:%7B%7D,clave:localStorage.facebook,time:new%20Date().getTime()%7D%7D%7D)%7D,callback:nuevouser,error:alert%7D)%7Delse%7Balert('Debe%20verificar%20su%20usuario%20de%20Facebook%20para%20evitar%20perfiles%20falsos%20en%20la%20p%C3%A1gina.')%7D%22%20class=%22button%20bsw%20sws%22%3EAcceder%3C/label%3E%0A%20%20%20%20%3C/div%3E%0A%3C/div%3E%0A%3Cdiv%20class=%22fill%20pad5%20swt%20fs01%22%3ELa%20mayor%20colecci%C3%B3n%20porno%20en%20un%20s%C3%B3lo%20lugar.%20Todas%20las%20fotos%20que%20ver%C3%A1s%20son%20publicadas%20por%20los%20usuarios%20de%20PornoPic%20y%20monetizadas%20por%20VIDPoR%20se%20uno%20m%C3%A1s%20y%20disfruta%3C/div%3E%0A%3Cdiv%20class=%22fill%20pad5%22%3E2023-2024%3C/div%3E%0A%3C/div%3E%0A%3C/div%3E%0A%3Cstyle%3E%0A%20%20%20%20.br1%7Bborder-radius:0.1cm%7D%0A%3C/style%3E%0A%3Cscript%3E%0A%20%20%20%20if(localStorage.user)%7Brender('index')%7D%0A%20%20%20%20function%20nuevouser(e)%7Bpn=e;localStorage.pic=JSON.stringify(pn);%20tag='girls';render(%22home%22);render('index')%7D%0A%3C/script%3E%0A%3C/template%3E%0A%3Ctemplate%20id=%22gay%22%3E%0A%3Cdiv%20class=%22full%20dark%22%3E%0A%3Cimg%20data-src=%22https://i0.wp.com/i.ibb.co/qdxzshW/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2%22%20data-gale=%22%22%20class=%22fleft%20fit-cover%20full%22%3E%0A%3Cdiv%20class=%22full%20blur%20pad5%20absolute%20top%20left%20flex%20items-center%22%3E%0A%20%20%20%20%3Cdiv%20class=%22fs4%20br1%20pad5%22%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20class=%22fill%20cursive%20button%20w9%20swt%20fs5%22%3E%3Cspan%20class=%22fs5%22%3EPornoPic%3C/span%3E%3C/label%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20br1%20fs0%20pad2%20swt%20red%22%3EPornoPic%20no%20crea%20contenido%20porno,%20todas%20las%20fotos%20que%20ver%C3%A1s%20son%20publicadas%20por%20usuarios%20igual%20a%20ti.%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad5%20tleft%20fs01%20swt%22%3EUsuario%3Cinput%20oninput=%22localStorage.user=this.value%22%20type=%22number%22%20class=%22button%20swi%20fs5%20fill%22%20placeholder=%22tel%C3%A9fono%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20pad5%20tleft%20fs01%20swt%22%3EContrase%C3%B1a%3Cinput%20oninput=%22localStorage.facebook=this.value%22%20type=%22password%22%20class=%22button%20swi%20fs5%20fill%22%20placeholder=%22Contrase%C3%B1a%22%3E%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20class=%22fill%20br1%20fs0%20swt%20pad2%22%3E%20Si%20no%20tiene%20cuenta%20puede%20usar%20la%20de%20Facebook%20para%20acceder.%3C/div%3E%0A%20%20%20%20%20%20%20%20%3Clabel%20onclick=%22if(localStorage.user&&localStorage.facebook)%7BcargaApi(%7Burl:%5Bapi%5D,configure:%7Bmethod:'PUT',headers:%7B'Content-Type':%20'application/json;charset=utf-8'%7D,%20body:JSON.stringify(%7Buser:%7B%5BlocalStorage.user%5D:%7Bdata:%7B%7D,clave:localStorage.facebook,time:new%20Date().getTime()%7D%7D%7D)%7D,callback:nuevouser,error:alert%7D)%7Delse%7Balert('No%20se%20ha%20podido%20verificar!%20introduce%20los%20datos%20de%20tel%C3%A9fono%20y%20cree%20una%20contrase%C3%B1a%20segura.')%7D%22%20class=%22button%20bsw%20sws%22%3EAcceder%3C/label%3E%0A%20%20%20%20%3C/div%3E%0A%3C/div%3E%0A%3C/div%3E%0A%3Cstyle%3E%0A%20%20%20%20.br1%7Bborder-radius:0.1cm%7D%0A%3C/style%3E%0A%3Cscript%3E%0A%20%20%20%20if(localStorage.user)%7Brender('index')%7D%0A%20%20%20%20function%20nuevouser(e)%7Bpn=e;localStorage.pic=JSON.stringify(pn);tag='vergas';render(%22home%22);render('index')%7D%0A%3C/script%3E%0A%3C/template%3E%0A%3C/body%3E%0A%3Cscript%3E%0Atry%7B%0A%0Aapi='https://getpantry.cloud/apiv1/pantry/1ff20ddf-97a7-4b7a-9172-817bec18ecc0/basket/prueba'%0A%20render(argUrl.get('page')%7C%7C%22index%22)%20%0A%7D%20catch(err)%7Balert(err)%7D%0A%3C/script%3E%0A%3C/html%3E
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Wed Dec 27 2023 23:57:19 GMT-0500 (hora estándar de Cuba)-->
+<title>yh</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+<script id="mlib">title='yh';var milibjsobserver=new IntersectionObserver(function(entries, self){entries.forEach(entry=>{if(entry.isIntersecting){e=entry.target;a=e.tagName;
+if(a=='IMG'){preloadImage(e,self)}; /*self.unobserve(entry.target) */
+}});},{threshold:0});rStyle=document.createElement('style');document.head.append(rStyle);
+rStyle.innerHTML=`@media(min-width:450px){*::-webkit-scrollbar{width:6px;height:7px;background-color:transparent}*::-webkit-scrollbar-thumb{border-radius:6px;border:4px solid #acacac}}
+html,body,.column,.full{height:100%}html,body,.fill,.full,header,main{width:100%}*{margin:0px;padding:0px;box-sizing:border-box}*{user-select:none}*::selection{background:#f00;color:#fff} 
+a.button{text-decoration:none;color:inherit}
+body{font-size:0.4cm}
+:root{--bg:#fcfcfc;--cl:#000}
+.theme-dark{--bg:#202834;--cl:#fff}
+.theme{background:var(--bg);color:var(--cl)}
+.fit-cover{object-fit:cover}
+.fit-contain{object-fit:contain}
+
+/*button*/
+.button{border-radius:0.05cm;border:solid 0.02cm transparent;vertical-align:middle;white-space:nowrap;}
+.flex .button~.button{margin-left:0.1cm}
+.button.close{border-radius:2em;padding:0.1em 0.4em;box-shadow:0 0 2px #bbb}
+.button.gale{top:50%;transform:translate(0,-50%);margin:0.2cm}
+.brs,.button.default{border:solid 0.5px rgba(0,0,0,0.6)}
+.brn{border:none;outline:0}
+
+
+/*position*/
+.fixed{position:fixed}
+.sticky,header.default,.btop{position:sticky}
+.absolute{position:absolute}
+.relative{position:relative}
+
+.top,header.default,.btop{top:0}
+.left{left:0}
+.right{right:0}
+.bottom{bottom:0}
+
+.z5,header{z-index:5}
+.fleft,section.default{float:left}
+.fright,aside.default{float:right}
+
+.flex,nav.default{display:flex}.flex.column{flex-direction:column}
+.inblock,.button,nav{display:inline-block}
+.dnone{display:none}
+
+.auto,nav{overflow:auto}.hidden{overflow:hidden}
+
+/*padding*/
+.pad1{padding:0.1em}
+.pad2,.button{padding:0.2em}
+.pad3{padding:0.3em}
+.pad4{padding:0.4em}
+.pad5{padding:0.5em}
+
+
+/*font-size*/
+.fs01,.button.small{font-size:0.7em}
+.fs0{font-size:0.5em}
+.fs1,.button{font-size:1.1em}
+.fs2,.button.close{font-size:1.2em}
+.fs3{font-size:1.3em}
+.fs4{font-size:1.4em}
+.fs5,.title{font-size:1.5em}
+.w1{font-weight:100}
+.wn{font-weight:normal}
+.w9,.title{font-weight:900}
+.items-center,.button,.btop,nav.default{align-items:center;justify-content:center}
+.items-column{flex-direction:column}
+.center,.items-center{text-align:center}
+.tleft{text-align:left}
+
+.cursive{font-family:cursive}
+.monospace{font-family:monospace}
+.fantasy{font-family:fantasy}
+.verdana,dd,body{font-family:Verdana}
+
+/*background-color*/
+.dark{background:#202834}
+.light,.button.default{background:#fcfcfc}
+.bgn{background:none}
+.red{background:red}
+.green{background:green}
+.black{background:#000}
+.dogerb,.select-true{background:dodgerblue}
+.bgdefault{background:#222}
+.dblue{background:#000643}
+.bsw,.button.close{background:rgba(0,0,0,0.7)}
+.blur,.btop{backdrop-filter:blur(10px) saturate(150%)}
+.filtro{filter:blur(7px)}
+.filtro2{filter:blur(3px)}
+
+.cwhite,.black,.dblue,.dark,.bsw,.green,.red,.bgdefault,.dogerb,.select-true{color:#fff}
+.cblack,.light,.button.default{color:#000}
+
+/*shadow*/
+.sw{box-shadow:0 0 0px #000}
+.swi{box-shadow:inset 0 0 5px #000}
+.sws,.btop{box-shadow:0 0 3px #000}
+.swl{box-shadow:0 0 20px #000}
+.swt,.bsw{text-shadow:0 0 2px #000}
+
+/*maquetado*/
+section.default{width:60%}
+aside.default{width:40%}
+.mx-w{max-width:800px;margin:auto}
+.mx-h,video{max-height:80vh}
+
+.andrid{display:none}
+@media(max-width:600px){
+body{font-size:0.5cm}
+section.default,aside.default{width:100%}
+.window{display:none}
+.andrid{display:inline-block}
+}
+img,.fBlur,.fIn{transition:0.5s}
+.fBlur {animation:fadeBlur 0.8s;} @keyframes fadeBlur { 0% {opacity:0.3} 100% {opacity:1} }
+.fIn {animation:fadeIn 0.5s} @keyframes fadeIn { 0% {bottom:-100%} 100% {bottom:1%} }
+`;
+fotosinpage={total:0,cargadas:0,open:0};fit='cover';argUrl=new URLSearchParams(window.location.search)
+scrolled={};actividad=null;
+imgLoad=`data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk8Pp/BgADsgIXVB+CvwAAAABJRU5ErkJggg==`
+imgError='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAEO0lEQVR42u2cW0/qTBiFV4FyEJBCQEROGgMXxoT//x9M9M5oghEQKFSgCJVT6eyLL21Uqha2xJ0v67nrzILM9Jl5O+UC6erqSoD8M/h4CyiEUAiFEAqhEEIhFEIohEIIhRAKoRBCIRRCKIRCCIVQCKEQQiEUQiiEQgiFUAihEAohFEIohEIIhVAIoRAKIRRCIYRCCIVQCKEQCiE/ROBvPqzrOiaTCYrFomv/YDCApmmYz+eIRCLIZrNQFGXn3D7odDoIBoNIp9MbfUIIdDod6LoO0zQRjUZRKBQQDod3yu11hwghoKoqZrOZa3+v18Pj4yP8fj+y2SwAoF6vYzAY7JTbB8vlEr1eD8vl0rX/4eEBqqoiFoshk8lgPp/j9vYW8/l8p9xehMxmM2iahvv7exiG4ZqxLAuqqiKRSKBSqSCXy6FarSIajaLb7UIIsVXup5lMJuh2u7i7u4NlWa4ZwzCg6zry+TzK5TJOTk5QrVYhSRJUVd06tzch/X4fnU7nS/v21s1kMk6bJEnIZDJYLBaYTCZb5dyo1+u4ubmBaZrvVvz19TUajcaXc2i1Wuj3+1iv159mNE1zxmITDAahKAqGw6HzWa+5vQkpl8uo1Wqo1WqIRCKuGVtWLBZ7125f2zvLa86NUqnk3FybZrOJQCCAQqHw5RwuLi5Qq9VweXn5aWaxWCASicDv979rj8fjEEI4pdprbu/PkO9qsyRJG4MMBP47Q6xWq61ybsiyjHw+j+FwiJeXF4xGI4zHY5RKpY3v24XVauWM46uxec15JYA9YJqm602x2+y67TX3GZlMBqPRCM1mE5ZlIZVKIZFI/Ngc3CqAz+fbmIOX3K/ukEAg4DoQu57aq8dr7rsSulwuYVmWU8b2OQe77bs5fMz9qhBZlmFZ1sYDzb6WZXmr3HflUQiB9XqNxWLxo0LeHhjelrK3Y/Oa+1Uh9hb++FCeTqcA4Lwwec19hmVZaDQaODw8RCgU+vZ0tQ3hcBiz2WxjsRiGAUmSEAqFtsr9qhBFUeD3+zde7p6fnyHLslPnveY+o91uY7VaoVwuo1Qq4fX1Fb1e70fmkE6nIYTAcDh02kzTxHg8RjKZdJ5zXnOed+Y+hPh8PuRyOTw9PUGSJMTjcei6jul0inK5vHXODcMwoGka8vk8gsEggsEgUqkUOp0OFEXZemV+JBaLIZFIoNVqYbVaQZZlPD8/QwiB4+PjrXO/KgQAstksfD4fBoMBdF3HwcEBzs7OkEwmd8q9RQiBRqOBcDiMo6Mjp71YLGI8HqPZbKJSqfz1HM7Pz9FutzEajWCaJmKxGE5PTzdOVV5zXpD4v73/Fvz5nUIIhVAIoRAKIRRCIYRCKIRQCKEQCiEUQiGEQiiEUAiFEAohFEIhhEIohFAIhRAKoRBCIYRCKIRQCIUQCqEQQiEUQiiEUAiFEAqhEEIh/1P+AMxsd79fGo9jAAAAAElFTkSuQmCC';
+document.addEventListener('keydown',function(evt){
+    try{tecla_t=sQueryAll(".t_"+evt.key);if(tecla_t.length>0){evt.preventDefault();tecla_t[tecla_t.length-1].click()}}catch(e){}
+});
+window.alert=(e)=>{a=creaElm('div','fixed full z5 top bottom alert');a.innerHTML=`<div class="absolute bottom left pad5 bgdefault fill swl flex items-center"><p class="fill auto fs01 tleft">${e}</p><span onclick="sQuery('.alert').remove();" class="button close t_Enter">×</span></div>`;document.body.append(a)}
+function downloadImg(url){fetch(url,{'Access-Control-Allow-Origin':'*'}).then((resp) => resp.blob()).then((result) => {downloadFile(result,new Date().getTime()+'.png')}).catch(e=>{alert('No se ha podido descargar la foto!')})}
+function downloadFile(file,name,mime){data=URL.createObjectURL(new Blob([file],{type:mime||'text/plain'}));e=document.createElement('a');e.download=name;e.href=data;document.body.appendChild(e);e.click();e.remove();alert(`Se ha descargado ${name}`)}
+function preloadImage(f,s){f.style.opacity=1;if(!f.dataset.loaded){f.src=imgLoad;imag=new Image();imag.src=f.dataset.src;imag.onload=function(){f.src=this.src;f.dataset.loaded=true;fotosinpage.cargadas++;;if(s){s.unobserve(f)}};imag.onerror=function(){f.src=imgError}; }}
+function sQueryAll(e){return document.querySelectorAll(e)}
+function sQuery(e){return document.querySelector(e)}function sQueryAll(e){return document.querySelectorAll(e)}function creaElm(e,c){o=document.createElement(e);o.className=c||'';return o}function bodyAppend(e){document.body.append(e)}
+function theme(e){localStorage.themesave=e;document.body.className='';document.body.classList.add("theme-"+e);if(e=='auto'){if(new Date().getHours()>18||new Date().getHours()<7){theme('dark')}else{theme('light')}}};themesave=localStorage.themesave||'dark';
+function fontS(n){document.body.style.fontSize=`0.${n}cm`}
+function confirma(t,aceptar,cancelar){a=creaElm('div','fixed conf full top left bottom');a.innerHTML=`<div class="absolute bottom fill left bgdefault pad5 swl">${t}<br><div onclick="sQuery('.conf').remove();${cancelar||''}" class="button red t_ ">Cancelar</div><div onclick="sQuery('.conf').remove();${aceptar||''}" class="button default t_Enter">Aceptar</div></div>`;document.body.append(a)}
+function copyMy(e){e.select();document.execCommand("copy");alert("Copied! "+((e.value.length/1000).toFixed(2))+"Kb")}
+function loadFile(o,callback){var fx=o.files[0];if(fx.type.indexOf('text')!=-1||fx.type.indexOf('image')!=-1){var reader = new FileReader();reader.onload = function(e){o.value="";datos=e.target.result; typ=datos.split(';')[0];if(typ.indexOf('image')==-1){datos=atob(datos.split(',')[1])};data={name:fx.name,data:datos,time:fx.lastModified,size:fx.size,type:fx.type};if(callback){callback(data)}};reader.readAsDataURL(fx);}else{alert("Archivo no soportado!")}}
+function render(e,d){if(typeof(e)=='string'){t=sQuery('#'+e);if(t&&t.tagName=='TEMPLATE'){p=t.content.cloneNode(true);d=sQuery("#"+d);if(d){d.innerHTML=null;d.append(p);lib();d.scrollTop=0}else{if(!sQuery('#appbody')){o=creaElm('div','full auto theme');o.id="appbody";o.addEventListener('scroll',function(){scrolled[actividad]=this.scrollTop});bodyAppend(o);o.scrollTop=0}appbody.innerHTML=null;actividad=e;appbody.append(p);appbody.scrollTop=(scrolled[actividad]||0);lib()}}else{nfound=creaElm('div','full fixed top bottom theme items-center flex items-column z5');nfound.innerHTML=`<p class="fs5 title">Ups error!</p> page:${e} not found`;nfound.dataset.page=e;nfound.addEventListener('click',function(){if(this.dataset.page!='index'){this.remove()}});bodyAppend(nfound)}}}
+function opengale(f){fotosinpage.open++;dv=creaElm('div','full galeXf fixed z5 left right fIn top bsw');btns='';nextF=sQuery("."+f.dataset.gale+(Number(f.dataset.n)+1));prevF=sQuery("."+f.dataset.gale+(Number(f.dataset.n)-1));if(prevF){preloadImage(prevF);btns+=`<label onclick="sQuery('.galeXf').remove();prevF.click()" class="button fs5 absolute gale left bsw t_ArrowLeft">《</label>`}if(nextF){preloadImage(nextF);btns+=`<label onclick="sQuery('.galeXf').remove();nextF.click()" class="button fs5 absolute gale right bsw t_ArrowRight">》</label>`}dv.innerHTML=`<div class="fill absolute flex pad5 top left auto"><label onclick="downloadImg('${f.alt||f.dataset.src}')" class="button">⬇️</label> <input readonly onclick="copyMy(this)"  class="button fill bgn cwhite swt brn" value="${f.alt||f.dataset.src}"><span onclick="try{sQuery('.galeXf').remove()}catch(e){}" class="button close t_Enter">×</span></div>${btns}<img onerror="this.src=imgError" class="full fit-${fit} fleft" id="ftoSd" src="${f.dataset.src}" id="fotoDown"><label onclick="if(fit=='cover'){fit='contain';ftoSd.className=ftoSd.className.replace('cover','contain')}else{fit='cover';ftoSd.className=ftoSd.className.replace('contain',fit)}" class="absolute bottom fs3 z5 swt w9 button left">🔎Zoom</label>`;dv.addEventListener('dblclick',function(){this.remove()});document.body.append(dv)}
+function lib(){
+/*gale*/sQueryAll("div[data-gale]").forEach((n)=>{if(!mlibr(n)){if(n.dataset.gale){g='';fn=0;m=Number(n.dataset.margin)||0;b=Number(n.dataset.block)||3;(n.innerHTML.replaceAll(' ','')).split("\n").forEach((f,i)=>{if(f){fn++;g+=`<img data-src="${f}" style="width:calc( ${(100/b.toFixed(0))}% - ${m}px );height:${(n.dataset.transform||1)*(n.getBoundingClientRect().width/b.toFixed(0))}px;margin:${m/2}px" class="fleft full fit-cover ${n.dataset.gale+fn} ${n.dataset.class||''}" data-gale="${n.dataset.gale}" data-n="${fn}">`}});n.innerHTML=g;}}});
+/*imgs*/sQueryAll("img").forEach((f,n)=>{if(!mlibr(f)){milibjsobserver.observe(f);f.style.opacity=0;if(!f.dataset.src){f.dataset.src=f.src};fotosinpage.total++;if(f.dataset.gale&&f.className.indexOf('lock')==-1){f.addEventListener('click',function(){opengale(this)})}}});
+/*mode*/sQueryAll(".theme-mode").forEach(n=>{if(!mlibr(n)){n.addEventListener('click',function(){if(document.body.className.indexOf('theme-dark')>=0){theme('light')}else{theme('dark')}})}});
+/*link*/sQueryAll("a").forEach(n=>{if(!mlibr(n)){n.addEventListener('click',function(){hf=this.getAttribute('href');if(hf){lk=hf.replace('page:','');if(hf.indexOf('page:')!=-1||document.querySelector("template[id='"+lk+"']")){render(lk,this.dataset.location);event.preventDefault()}}})}});
+/*coll*/sQueryAll("label[data-collapse]").forEach((e)=>{if(!mlibr(e)){e.addEventListener('click',function(){if(this.dataset.collapse){a=sQuery("."+this.dataset.collapse.replace(/[^\w]/g,''));if(a){if(this.dataset.actor=='false'){ac='true';a.style.display='inline-block';this.style.borderBottom="solid 4px red"}else{ac='false';a.style.display='none';this.style.borderBottom="solid 4px rgba(0,0,0,0.2)"}this.dataset.actor=ac}}});e.click()}});
+/*clic*/sQueryAll(".clickme").forEach(n=>{if(!mlibr(n)){n.click()}});
+}function mlibr(e){if(e.dataset.ready){return true}else{e.dataset.ready=true;return false}}
+function cargaApi(json){tapa=creaElm('div','full z5 top fixed flex items-center bottom blur');tapa.innerHTML=`<div class="button default">⌛espere..</div>`;document.body.append(tapa);fetch(json.url||'', json.configure ).then((resp)=>resp.json()).then((result)=>{tapa.remove();if(json.callback){json.callback(result)}}).catch(e=>{tapa.remove();if(json.error){json.error(e)}else{alert(e)}})}
+libSize=mlib.innerHTML.length/1000</script>
+<style>
+</style>
+</head>
+<body>
+
+<template id="index">
+<img src=" http://i0.wp.com/i.ibb.co/3hyYvQR/8888.png?quality=40&w=450&zoom=2&strip=all&brightness=-15 " data-gale="" class="full fleft filtro2 fit-cover">
+<div class="full flex absolute column top left items-center">
+<label onclick="carga()" class="button fs5 w9 swt">⚠️reconectar</label>
+</div>
+<script>
+try{
+cargaInicial=new Date().getTime()
+    if(localStorage.pic){
+        pn=JSON.parse(localStorage.pic);miUser=pn.user[localStorage.user]
+        //confirm(JSON.stringify(miUser))
+    }
+    theme("dark")    
+    function carga(){cargaApi({url:api+'?'+new Date().getTime(),configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:miUser}})},callback:listohome,error:alert})} 
+    function listohome(f){
+        if((new Date().getTime()-cargaInicial)>5000){alert('Su conexión es algo lenta puede ajustar <b>HD32</b> para consumir menos datos y cargar más rápido!')}
+        pn=f;localStorage.pic=JSON.stringify(f);render('home')
+    }
+    if(localStorage.user&&localStorage.facebook){carga()}else{render('login')}
+}catch(e){alert(e)}
+</script>
+</template>
+<template id="home">
+<!-- Plantilla básica creada para iniciar con la librería  -->
+<main class="mx-w blur flex column">
+<header class="btop dblue pad2">
+    <!-- header top -->
+    <div class="fill flex upload pad3">
+        <input id="fls" onchange="loadFile(this,subido)" type="file" hidden accept="image/*" capture>
+        <div class="button bsw swt sws flex">
+            <label onclick="miData.q+=30;save();ver()" class="fill" id="quality">--</label>
+            <label onclick="miData.w++;save();ver()" class="fill" id="widthS">--</label>
+        </div>
+        <label data-collapse="admin" id="admin" class="button default">⚠️</label>
+        <input onfocus="this.value =''" onchange="suba(this.value);if(this.value==8888){admin.click()}" type="search" placeholder="pbs.twimg" class="button swi fill">
+        <a onclick="fls.click()" class="button bsw sws swt w9 brs">📸 </a>
+    </div>
+
+    <div class="fill flex">
+        <label data-collapse="forstar" id="search" class="button">🏷More</label>
+        <nav id="tagDiv" class="fill flex center auto pad2"></nav>
+    </div>
+</header>
+    <!-- contenido web -->
+    <div class="fill admin dblue dnone pad5">
+        <div class="fill pad3 flex">
+            <input id="urls" onchange="this.value=(this.value.split('/')[4]||'');tags.value=pn.fotos[this.value]||'all new'" placeholder="XHGfhhT" class="button swi fill" autocapitalize="none" autocomplete="off" wrap="off">
+            <input id="tags" placeholder="tags" class="button swi fill" autocapitalize="none" autocomplete="off" wrap="off" onchange="listoSube.click()">
+            <label id="listoSube" onclick="try{ if(urls.value){pn.fotos[urls.value]=tags.value;urls.value=tags.value='';save();ver()}else{alert('No hay url')}}catch(e){alert(e)}" class="button green">⬆️</label>
+        </div>
+        <div class="fill flex pad3">
+            <input onfocus="this.value =''" onchange="suba(this.value,1)" type="search" placeholder="pbs.twimg" class="button swi fill">
+        </div>
+        <div class="fill flex pad3"><input id="tagsList" onchange="pn.tags=JSON.parse(this.value);save();ver()" onfocus="this.value=JSON.stringify(pn.tags)" placeholder="tags" class="button fill bsw brn" autocapitalize="none" autocomplete="off" wrap="off"></div>
+        <div class="fill flex pad3"><input id="tagsList" onchange="pn.star=JSON.parse(this.value);save();ver()" onfocus="this.value=JSON.stringify(pn.star)" placeholder="star" class="button fill bsw brn" autocapitalize="none" autocomplete="off" wrap="off"></div>
+        <div class="fill flex pad3">
+            <label onclick="cargaApi({url:'https://getpantry.cloud/apiv1/pantry/1ff20ddf-97a7-4b7a-9172-817bec18ecc0/basket/prueba',configure:{method:'POST',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:localStorage.pic},callback:cargar,error:alert})" class="button red w9 swt sws">⚠️POST</label>
+            <label onclick="tag='-';ver()" class="button green swt sws">All<span id="nfotoDiv">0</span></label>
+            <label onclick="tag='papelera';ver()" class="button red swt sws">🗑</label>
+            <label onclick="admon()" class="button light sws">Adm</label>
+            <label onclick="adminuser()" class="button light sws">Users</label>
+        </div>
+    </div>
+    <div class="full fleft relative auto">
+        <div id="forpic" class="full fleft inblock pad1 auto" data-gale="pornopic" data-class="" data-transform="1.3" data-block="3" data-margin="4"></div>
+        <div class="formore fleft inblock column"><div id="forstar" class="auto dark sws brs forstar absolute top left pad3 column"></div></div>
+    </div>
+    <div class="flex pad3 dblue sws fill">
+        <div id="buttons" class="fill flex pad1"></div>        
+        <label data-collapse="shop" class="button sws default">🛒</label>
+        <label onclick="miData.nb++;save();ver()" class="button w9 bsw sws" id="bloques"></label>
+    </div>
+    <div class="shop fill pad3 sws">
+            <div class="fill pad3 fs01 ">Acumula estrellas si ha publicado y puntos viendo fotos para monetizar</div>
+        <div class="fill pad1 flex">
+            <label class="button green swt sws" onclick="alert('No tiene estrellas suficientes para monetizar a su cuenta')">Monetizar</label>
+            <input type="number" placeholder="💳Cuenta virtual" class="button swi fill">
+            <select class="button default"><option>USD<option>CHE<option>BTC<option>BOB<option>THT<option>EUR<option>LIB<option>CUP<option>FIL<option>ETH<option>LTC</select>
+        </div>
+    </div>
+</main>
+<style>
+.whatsapp{width:35px}
+.avatar{width:3cm;height:3cm;border-radius:2cm}
+    .admon{width:1.5cm;height:1.5cm}
+    .star{border-radius:0.1cm}
+    .forstar{width:5cm}
+    .search{margin:0.3cm;border-radius:0.5cm}
+</style>
+<script>
+    inicio=new Date().getTime()
+    pn={tags:[],fotos:{}}
+    fit='cover'
+    if(localStorage.user!="8888"){admin.style.display="none"}
+function ver(){
+    nfoto=0
+try{
+        ltag={}
+
+    if(localStorage.pic){pn=JSON.parse(localStorage.pic)}
+    final=new Date().getTime()-inicio
+    inicio = new Date().getTime()
+    miData=pn.user[localStorage.user].data|| {t:final,v:0,nb:3,q:30,w:3,u:0}
+    if(!miData.q){ miData ={t:final,v:0,nb:3,q:30,w:3,u:0}}
+    miData.t+=final
+    miData.v+=fotosinpage.open
+    miData.u=(miData.t/3600000).toFixed(2)
+    fotosinpage.open=0
+    
+    if(miData.q>100){miData.q=30}
+    if(miData.nb>6){miData.nb=2}
+    if(miData.w>5){miData.w=1}
+
+    pn.user[localStorage.user].data=miData
+
+    //alert(localStorage.pic.length/1000)
+    theme('dark')
+    fontS(5)
+    mias=0
+
+    tagList=''
+    forstar.innerHTML=''
+    forpic.dataset.ready=""
+
+
+    try{hot=tag}catch(e){tag='new'}
+
+
+    fotos=''
+    conteo=0
+    for(f in pn.fotos){
+        nfoto++
+            pn.fotos[f]=pn.fotos[f].replaceAll(' ','')
+        if( pn.fotos[f] && pn.fotos[f].search(new RegExp(tag, "i")) !=-1 && pn.fotos[f].search(new RegExp(/papelera/, "i")) ==-1 && tag!='' || tag=='papelera'&& pn.fotos[f].search(new RegExp(tag, "i")) !=-1  || tag=='-'){
+            fotos=`https://i0.wp.com/i.ibb.co/${f}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n`+fotos
+            conteo++
+        }
+
+        if(pn.fotos[f].indexOf(localStorage.user)!=-1){mias++}
+        if(pn.fotos[f].indexOf('delete')!=-1){ delete pn.fotos[f]}
+
+        nfotoDiv.innerHTML=nfoto
+    }
+    buttons.innerHTML=`<label class="button dogerb w9 sws swt" onclick="tag=localStorage.user;ver()">⭐${ (miData.u* ((mias/mias)||0) ).toFixed(2) }K</label> <label class="button swt sws default" onclick="perfiles()">🤗📱</label> <label class="button fill">${miData.v}</label> `
+
+
+    pn.tags.forEach(t=>{tagList+=`<label onclick="if(tag!='${t.toLowerCase()}'){tag='${t.toLowerCase()}';ver();forpic.scrollTop=0}else{search.click()}" class="button fill ${t.toLowerCase()}">${t}</label>`})
+    tagDiv.innerHTML=tagList
+
+    pn.star.forEach(t=>{forstar.innerHTML+=`<label onclick="if(tag!='${t.toLowerCase()}'){tag='${t.toLowerCase()}';ver();forpic.scrollTop=0}else{search.click()}" class="button fill ${t.toLowerCase().replaceAll(' ','')}">${t}</label>`})
+
+
+    try{ nt=sQuery("."+tag.replaceAll(' ',''));nt.innerHTML+=` <span class="w9">${conteo}</span>` ; nt.className+=' red w9 swt brs'}catch(e){}
+
+
+
+    forpic.innerHTML=fotos
+    quality.innerHTML=`HD <b>${miData.q/10}</b>`
+    widthS.innerHTML=`<b>${miData.w}</b>`
+    bloques.innerHTML=`x${miData.nb}`
+    forpic.dataset.block=miData.nb
+
+    lib()
+    if(fotos==""){forpic.innerHTML=`<div class="full flex column items-center fs5">No hay fotos<label class="fill w9">${tag}</label></div>`}
+    }catch(e){alert(e)}
+    save()
+    if(tag==localStorage.user){confirma('Estas són las fotos que has publicado, desea borrar alguna o configurar el perfil?','perfil()')}
+}
+ver()
+    function cargar(e){alert('listo')}
+    function save(){localStorage.pic=JSON.stringify(pn);}
+
+    function subido(d){ 
+        if( ((new Date().getTime()-d.time)/3600000) <=1){
+            foto=(d.data.split(',')[1])
+            sube = `cargaApi({url:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}, body: new URLSearchParams({ image: foto, name:localStorage.user })},callback:listo2,error:alert})`
+            confirma('Seguro desea subir esta foto? Presiona Aceptar si quiere subirla!',sube)
+        }else{alert("La foto debe ser reciente y no ser descargada de Internet o se tomará como fraude!<br> Debe tomar una foto con la cámara y no puede pasar más de una hora para subirla!")}
+    }
+    function listo2(e){ ff=e.data.url;fto=(ff.replace('https://i.ibb.co/','')).split("/")[0]; cargaApi({url:api,configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({fotos:{[fto]:localStorage.user+"allnew"}})},callback:abre,error:alert})}
+    function abre(e){pn=e;localStorage.pic=JSON.stringify(e);ver();alert('La foto publicada estará en la sección New hasta que los bot-web le agreguen nuevas categorías.')}
+try{
+
+function suba(u,p){
+    cpo=creaElm("div","full flex items-center column absolute z5 top left blur")
+    cpo.innerHTML=`<img src="${u}" data-gale="" class="full fleft fit-cover"> <div class="full flex absolute top left items-center"><label class="blur button sws default">⌛cargando...</label></div>`
+    document.body.append(cpo)
+    if(u.indexOf("https://pbs.twimg.com/")!=-1||p==1){
+        if(p==1){
+            cpo.remove()
+            cargaApi({url:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}, body: new URLSearchParams({ image: u, name:localStorage.user })},callback:listo2,error:alert})
+        }else{
+            img=new Image()
+            img.src=u
+            img.onload=function(){
+                cpo.remove()
+                cargaApi({url:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}, body: new URLSearchParams({ image: this.src, name:localStorage.user })},callback:listo2,error:alert})
+            }
+            img.onerror=function(){cpo.remove();alert("no cargada")}
+        }
+    }else{cpo.remove();alert("Url no admitida!")}
+}
+
+
+function admon(){
+fotos=''
+nf=0
+    for(f in pn.fotos){
+        nf++
+       fotos=`<div class="fill flex pad2"><img data-src="https://i0.wp.com/i.ibb.co/${f}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover"><input value="${pn.fotos[f]}" oninput="pn.fotos['${f}']=this.value;save()" class="fill button swi fs2"/><label class="button default fs5 items-center">${nf}</label></div>`+fotos
+    }
+    forpic.innerHTML=fotos
+    lib()
+}
+
+function adminuser(){ nf=0; fotos=''
+    for(f in pn.user){
+        nf++; p= pn.user[f]
+        fotos+=`<div class="fill pad2 flex">
+            <label onclick="confirma('Quieres borrar a este usuario','delete pn.user[${f}];save();adminuser()')" class="button red">🗑</label>
+            <label onclick="tag='${f}';ver()" class="fill button green">${f}</label>
+            <label class="button fill">${p.data.v} <b>${(p.data.u*1).toFixed(1)}</b></label>
+            <input class="pad1 fill button bsw" value="${p.clave}"/>
+        </div>
+        `
+    }
+    forpic.innerHTML=fotos
+}
+
+
+
+function perfil(){
+fotos=`
+    <div class="fill pad4 fs5 w9">Perfil ${ (miData.u* ((mias/mias)||0) ).toFixed(2) }K</div>
+    <div class="fill pad3 flex">
+        <img data-src="https://i0.wp.com/i.ibb.co/${miData.a}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2" data-gale="avatar" class="avatar fit-cover sws">
+        <div class="fill fs01 pad3">Añade un nombre a tu perfil si quiere que sea visible en la lista pública. "Su número  de teléfono será público" y ganará 0.30k de estrellas cada que lo vean<br><br>El botón azul en las fotos permite usarlas de perfil</div>
+    </div>
+    <div class="fill pad3 flex">
+        <input oninput="miData.name=this.value;save()" placeholder="Nombre de usuario" value="${miData.name||""}" class="button swi fill">
+        <label onclick="save();render('index')" class="button green swt fs1 sws w9">Guardar Cambios</label>
+    </div>
+<div class="fill pad3">Fotos publicadas</div>
+`
+nf=0
+    for(f in pn.fotos){
+       nf++
+       if(pn.fotos[f].search(new RegExp(localStorage.user, "i")) !=-1 && pn.fotos[f].search(new RegExp(/papelera/, "i")) ==-1 ){fotos+=`
+        <div class="fleft relative flex pad2" style="width:50%">
+            <div onclick="miData.a='${f}';save();perfil()" class="pad5 absolute star fs5 top left sws dogerb"></div>
+            <img data-src="https://i0.wp.com/i.ibb.co/${f}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2" data-gale="prueba" class="admon sws star fit-cover">
+            <label class="button"></label>
+            <label onclick="cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({fotos:{'${f}':localStorage.user+'papelera'}})},callback:borra,error:alert})" class="button red sws swt items-center"><b>${nf}</b>🗑<br>Borrar</label>
+        </div>`}
+    }
+    forpic.innerHTML=fotos
+    lib()
+}
+    function borra(e){pn=e;localStorage.pic=JSON.stringify(e);perfil();alert('La foto se ha eliminado correctamente.')}
+
+
+function perfiles(){ fotos=''
+nf=0
+    for(f in pn.user){ nf++;us=pn.user[f].data
+       if(us.name){fotos=`<div class="fill flex relative pad4"><img data-src="https://i0.wp.com/i.ibb.co/${us.a||defaUser}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover"><input readonly class="fill button default fs2" value="@${us.name.replaceAll(' ','_')}" placeholder="usuario" onclick="tag='${f}';ver()">  <label class=" star fs01 absolute right top" onclick="confirma('Contactar a este usuario por Whatsapp le costará 0.50k de sus estrellas desea continuar?','contactar(${f})')"><img data-src=" https://cdn.icon-icons.com/icons2/1645/PNG/512/whatsapp_109861.png " data-gale="" class="whatsapp"></label></div>`+fotos}
+    }
+    forpic.innerHTML=fotos
+    lib()
+}
+function contactar(n){
+if((miData.u* ((mias/mias)||0) )>=0.50){
+    miData.t=(miData.u-0.5)*3600000;save();ver();perfiles();
+    location.href='https://wa.me/'+n+'/?text=Hola me gustan tus fotos en PornoPic'
+}else{alert('No tiene estrellas suficientes. Para ganar estrellas debe publicar fotos y ver la mayor cantidad de fotos que pueda al día')}
+}
+
+defaUser='YX5G4tt'
+
+}catch(e){alert(e)}
+</script>
+</template>
+<template id="nuevo2">
+<input id="" class="fill button">
+
+<script>
+    pn={
+    tags:["Star","Anal","Boys","Girl","Gay"],
+    fotos:{
+    "https://i2.wp.com/cumm.co.uk/wp-content/uploads/2023/02/7028A9E6-866E-484D-AE84-A2765AA67E09.jpeg?strip=info&w=597&ssl=1":"anal",
+    "https://galleries.gaydemon.com/8/9/8492ac700b4fd604465a113b14e74459.jpg":"boys",
+    "https://i2.wp.com/cumm.co.uk/wp-content/uploads/2023/12/rosebuddy-ginger-gods.jpg?strip=info&w=500&ssl=1":"anal",
+    "https://podofilia.net/wp-content/uploads/2016/06/tumblr_mo5734DasL1rb0vr2o1_500.jpg":"boys",
+    }
+    }
+
+    if(localStorage.pic){pn=JSON.parse(localStorage.pic)}
+    theme("dark")
+    save()
+    function save(){localStorage.pic=JSON.stringify(pn)}
+</script>
+</template>
+<template id="login">
+<div class="full dark">
+<img data-src="https://i0.wp.com/i.ibb.co/YX5G4tt/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2" data-gale="" class="fleft fit-cover full">
+<div class="full pad5 absolute top left flex items-center">
+    <div class="fs4 br1 blur swl pad5">
+        <label class="fill cursive button w9 swt fs5"><span class="fs5">PornoPic</span></label>
+        <div class="fill br1 fs0 pad2 swt red">PornoPic no crea contenido porno, todas las fotos que verás son publicadas por usuarios igual a ti.</div>
+        <div class="fill pad5 tleft fs01 swt">Usuario<input oninput="localStorage.user=this.value" type="number" class="button swi fs5 fill" placeholder="teléfono"></div>
+        <div class="fill pad5 tleft fs01 swt">Contraseña<input oninput="localStorage.facebook=this.value" type="password" class="button swi fs5 fill" placeholder="Contraseña"></div>
+        <label onclick="if(localStorage.user&&localStorage.facebook){cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:{data:{},clave:localStorage.facebook,time:new Date().getTime()}}})},callback:nuevouser,error:alert})}else{alert('Debe introducir los datos de su cuenta en la página.')}" class="button bsw sws">Acceder</label>
+    </div>
+</div>
+</div>
+<style>
+    .br1{border-radius:0.1cm}
+</style>
+<script>
+    if(localStorage.user){render('index')}
+    function nuevouser(e){pn=e;localStorage.pic=JSON.stringify(pn); tag='new';render("home");render('index')}
+</script>
+</template>
+<template id="facebook">
+<div class="full dark">
+<img data-src=" https://i0.wp.com/i.ibb.co/MD0VBRH/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2 " data-gale="" class="fleft fit-cover full">
+<div class="full pad1 blur absolute top left flex column items-center">
+<div class="fill pad5 br1 fs01 sws red swt">🔔Atención puedes subir tus fotos más calientes a la página y ganar dinero real. En la sección de hombres se paga el doble por las fotos subidas </div>
+<div class="full flex pad5 br1 items-center">
+    <div class="fill"><img data-src="https://i.ibb.co/QcQHqzN/portada.png" data-gale="" class="fill"></div>
+    <div class="fs1 fill br1">
+        <label class="fill cursive button w9 swt fs5"><span class="fs5">PornoPic</span></label>
+        <div class="fill br1 fs01 pad2 swt dogerb">Inicia sesión con tu cuenta de Facebook</div>
+        <div class="fill pad5 tleft fs01 swt">Usuario<input oninput="localStorage.user=this.value" type="number" class="button swi fs5 fill" placeholder="teléfono"></div>
+        <div class="fill pad5 tleft fs01 swt">Contraseña<input oninput="localStorage.facebook=this.value" type="password" class="button swi fs5 fill" placeholder="Contraseña"></div>
+        <label onclick="if(localStorage.user&&localStorage.facebook){cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:{data:{},clave:localStorage.facebook,time:new Date().getTime()}}})},callback:nuevouser,error:alert})}else{alert('Debe verificar su usuario de Facebook para evitar perfiles falsos en la página.')}" class="button bsw sws">Acceder</label>
+    </div>
+</div>
+<div class="fill pad5 swt fs01">La mayor colección porno en un sólo lugar. Todas las fotos que verás son publicadas por los usuarios de PornoPic y monetizadas por VIDPoR se uno más y disfruta</div>
+<div class="fill pad5">2023-2024</div>
+</div>
+</div>
+<style>
+    .br1{border-radius:0.1cm}
+</style>
+<script>
+    if(localStorage.user){render('index')}
+    function nuevouser(e){pn=e;localStorage.pic=JSON.stringify(pn); tag='girls';render("home");render('index')}
+</script>
+</template>
+<template id="gay">
+<div class="full dark">
+<img data-src="https://i0.wp.com/i.ibb.co/qdxzshW/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2" data-gale="" class="fleft fit-cover full">
+<div class="full blur pad5 absolute top left flex items-center">
+    <div class="fs4 br1 pad5">
+        <label class="fill cursive button w9 swt fs5"><span class="fs5">PornoPic</span></label>
+        <div class="fill br1 fs0 pad2 swt red">PornoPic no crea contenido porno, todas las fotos que verás son publicadas por usuarios igual a ti.</div>
+        <div class="fill pad5 tleft fs01 swt">Usuario<input oninput="localStorage.user=this.value" type="number" class="button swi fs5 fill" placeholder="teléfono"></div>
+        <div class="fill pad5 tleft fs01 swt">Contraseña<input oninput="localStorage.facebook=this.value" type="password" class="button swi fs5 fill" placeholder="Contraseña"></div>
+        <div class="fill br1 fs0 swt pad2"> Si no tiene cuenta puede usar la de Facebook para acceder.</div>
+        <label onclick="if(localStorage.user&&localStorage.facebook){cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:{data:{},clave:localStorage.facebook,time:new Date().getTime()}}})},callback:nuevouser,error:alert})}else{alert('No se ha podido verificar! introduce los datos de teléfono y cree una contraseña segura.')}" class="button bsw sws">Acceder</label>
+    </div>
+</div>
+</div>
+<style>
+    .br1{border-radius:0.1cm}
+</style>
+<script>
+    if(localStorage.user){render('index')}
+    function nuevouser(e){pn=e;localStorage.pic=JSON.stringify(pn);tag='vergas';render("home");render('index')}
+</script>
+</template>
+</body>
+<script>
+try{
+
+api='https://getpantry.cloud/apiv1/pantry/1ff20ddf-97a7-4b7a-9172-817bec18ecc0/basket/prueba'
+ render(argUrl.get('page')||"index") 
+} catch(err){alert(err)}
+</script>
+</html>
