@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Thu Dec 28 2023 11:53:43 GMT-0500 (hora estándar de Cuba)-->
-<title>project4</title>
+<!-- Thu Dec 28 2023 11:54:58 GMT-0500 (hora estándar de Cuba)-->
+<title>yh</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
-<script id="mlib">title='project4';var milibjsobserver=new IntersectionObserver(function(entries, self){entries.forEach(entry=>{if(entry.isIntersecting){e=entry.target;a=e.tagName;
+<script id="mlib">title='yh';var milibjsobserver=new IntersectionObserver(function(entries, self){entries.forEach(entry=>{if(entry.isIntersecting){e=entry.target;a=e.tagName;
 if(a=='IMG'){preloadImage(e,self)}; /*self.unobserve(entry.target) */
 }});},{threshold:0});rStyle=document.createElement('style');document.head.append(rStyle);
 rStyle.innerHTML=`@media(min-width:450px){*::-webkit-scrollbar{width:6px;height:7px;background-color:transparent}*::-webkit-scrollbar-thumb{border-radius:6px;border:4px solid #acacac}}
@@ -155,12 +155,382 @@ libSize=mlib.innerHTML.length/1000</script>
 <body>
 
 <template id="index">
-holahhhjjj
+<img src=" http://i0.wp.com/i.ibb.co/3hyYvQR/8888.png?quality=40&w=450&zoom=2&strip=all&brightness=-15 " data-gale="" class="full fleft filtro2 fit-cover">
+<div class="full flex absolute column top left items-center">
+<label onclick="carga()" class="button fs5 w9 swt">⚠️reconectar</label>
+</div>
+<script>
+try{
+cargaInicial=new Date().getTime()
+    if(localStorage.pic){
+        pn=JSON.parse(localStorage.pic);miUser=pn.user[localStorage.user]
+        //confirm(JSON.stringify(miUser))
+    }
+    theme("dark")    
+    function carga(){cargaApi({url:api+'?'+new Date().getTime(),configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:miUser}})},callback:listohome,error:alert})} 
+    function listohome(f){
+        if((new Date().getTime()-cargaInicial)>5000){alert('Su conexión es algo lenta puede ajustar <b>HD32</b> para consumir menos datos y cargar más rápido!')}
+        pn=f;localStorage.pic=JSON.stringify(f);render('home')
+    }
+    if(localStorage.user&&localStorage.facebook){carga()}else{render('login')}
+}catch(e){alert(e)}
+</script>
+</template>
+<template id="home">
+<!-- Plantilla básica creada para iniciar con la librería  -->
+<main class="mx-w blur flex column">
+<header class="btop dblue pad2">
+    <!-- header top -->
+    <div class="fill flex upload pad3">
+        <input id="fls" onchange="loadFile(this,subido)" type="file" hidden accept="image/*" capture>
+        <div class="button bsw swt sws flex">
+            <label onclick="miData.q+=30;save();ver()" class="fill" id="quality">--</label>
+            <label onclick="miData.w++;save();ver()" class="fill" id="widthS">--</label>
+        </div>
+        <label data-collapse="admin" id="admin" class="button default">⚠️</label>
+        <input onfocus="this.value =''" onchange="suba(this.value);if(this.value==8888){admin.click()}" type="search" placeholder="pbs.twimg" class="button swi fill">
+        <a onclick="fls.click()" class="button bsw sws swt w9 brs">📸 </a>
+    </div>
+
+    <div class="fill flex">
+        <label data-collapse="forstar" id="search" class="button">🏷More</label>
+        <nav id="tagDiv" class="fill flex center auto pad2"></nav>
+    </div>
+</header>
+    <!-- contenido web -->
+    <div class="fill admin dblue dnone pad5">
+        <div class="fill pad3 flex">
+            <input id="urls" onchange="this.value=(this.value.split('/')[4]||'');tags.value=pn.fotos[this.value]||'all new'" placeholder="XHGfhhT" class="button swi fill" autocapitalize="none" autocomplete="off" wrap="off">
+            <input id="tags" placeholder="tags" class="button swi fill" autocapitalize="none" autocomplete="off" wrap="off" onchange="listoSube.click()">
+            <label id="listoSube" onclick="try{ if(urls.value){pn.fotos[urls.value]=tags.value;urls.value=tags.value='';save();ver()}else{alert('No hay url')}}catch(e){alert(e)}" class="button green">⬆️</label>
+        </div>
+        <div class="fill flex pad3">
+            <input onfocus="this.value =''" onchange="suba(this.value,1)" type="search" placeholder="pbs.twimg" class="button swi fill">
+        </div>
+        <div class="fill flex pad3"><input id="tagsList" onchange="pn.tags=JSON.parse(this.value);save();ver()" onfocus="this.value=JSON.stringify(pn.tags)" placeholder="tags" class="button fill bsw brn" autocapitalize="none" autocomplete="off" wrap="off"></div>
+        <div class="fill flex pad3"><input id="tagsList" onchange="pn.star=JSON.parse(this.value);save();ver()" onfocus="this.value=JSON.stringify(pn.star)" placeholder="star" class="button fill bsw brn" autocapitalize="none" autocomplete="off" wrap="off"></div>
+        <div class="fill flex pad3">
+            <label onclick="cargaApi({url:'https://getpantry.cloud/apiv1/pantry/1ff20ddf-97a7-4b7a-9172-817bec18ecc0/basket/prueba',configure:{method:'POST',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:localStorage.pic},callback:cargar,error:alert})" class="button red w9 swt sws">⚠️POST</label>
+            <label onclick="tag='-';ver()" class="button green swt sws">All<span id="nfotoDiv">0</span></label>
+            <label onclick="tag='papelera';ver()" class="button red swt sws">🗑</label>
+            <label onclick="admon()" class="button light sws">Adm</label>
+            <label onclick="adminuser()" class="button light sws">Users</label>
+        </div>
+    </div>
+    <div class="full fleft relative auto">
+        <div id="forpic" class="full fleft inblock pad1 auto" data-gale="pornopic" data-class="" data-transform="1.3" data-block="3" data-margin="4"></div>
+        <div class="formore fleft inblock column"><div id="forstar" class="auto dark sws brs forstar absolute top left pad3 column"></div></div>
+    </div>
+    <div class="flex pad3 dblue sws fill">
+        <div id="buttons" class="fill flex pad1"></div>        
+        <label data-collapse="shop" class="button sws default">🛒</label>
+        <label onclick="miData.nb++;save();ver()" class="button w9 bsw sws" id="bloques"></label>
+    </div>
+    <div class="shop fill pad3 sws">
+            <div class="fill pad3 fs01 ">Acumula estrellas si ha publicado y puntos viendo fotos para monetizar</div>
+        <div class="fill pad1 flex">
+            <label class="button green swt sws" onclick="alert('No tiene estrellas suficientes para monetizar a su cuenta')">Monetizar</label>
+            <input type="number" placeholder="💳Cuenta virtual" class="button swi fill">
+            <select class="button default"><option>USD<option>CHE<option>BTC<option>BOB<option>THT<option>EUR<option>LIB<option>CUP<option>FIL<option>ETH<option>LTC</select>
+        </div>
+    </div>
+</main>
+<style>
+.whatsapp{width:35px}
+.avatar{width:3cm;height:3cm;border-radius:2cm}
+    .admon{width:1.5cm;height:1.5cm}
+    .star{border-radius:0.1cm}
+    .forstar{width:5cm}
+    .search{margin:0.3cm;border-radius:0.5cm}
+</style>
+<script>
+    inicio=new Date().getTime()
+    pn={tags:[],fotos:{}}
+    fit='cover'
+    if(localStorage.user!="8888"){admin.style.display="none"}
+function ver(){
+    nfoto=0
+try{
+        ltag={}
+
+    if(localStorage.pic){pn=JSON.parse(localStorage.pic)}
+    final=new Date().getTime()-inicio
+    inicio = new Date().getTime()
+    miData=pn.user[localStorage.user].data|| {t:final,v:0,nb:3,q:30,w:3,u:0}
+    if(!miData.q){ miData ={t:final,v:0,nb:3,q:30,w:3,u:0}}
+    miData.t+=final
+    miData.v+=fotosinpage.open
+    miData.u=(miData.t/3600000).toFixed(2)
+    fotosinpage.open=0
+    
+    if(miData.q>100){miData.q=30}
+    if(miData.nb>6){miData.nb=2}
+    if(miData.w>5){miData.w=1}
+
+    pn.user[localStorage.user].data=miData
+
+    //alert(localStorage.pic.length/1000)
+    theme('dark')
+    fontS(5)
+    mias=0
+
+    tagList=''
+    forstar.innerHTML=''
+    forpic.dataset.ready=""
+
+
+    try{hot=tag}catch(e){tag='new'}
+
+
+    fotos=''
+    conteo=0
+    for(f in pn.fotos){
+        nfoto++
+            pn.fotos[f]=pn.fotos[f].replaceAll(' ','')
+        if( pn.fotos[f] && pn.fotos[f].search(new RegExp(tag, "i")) !=-1 && pn.fotos[f].search(new RegExp(/papelera/, "i")) ==-1 && tag!='' || tag=='papelera'&& pn.fotos[f].search(new RegExp(tag, "i")) !=-1  || tag=='-'){
+            fotos=`https://i0.wp.com/i.ibb.co/${f}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n`+fotos
+            conteo++
+        }
+
+        if(pn.fotos[f].indexOf(localStorage.user)!=-1){mias++}
+        if(pn.fotos[f].indexOf('delete')!=-1){ delete pn.fotos[f]}
+
+        nfotoDiv.innerHTML=nfoto
+    }
+    buttons.innerHTML=`<label class="button dogerb w9 sws swt" onclick="tag=localStorage.user;ver()">⭐${ (miData.u* ((mias/mias)||0) ).toFixed(2) }K</label> <label class="button swt sws default" onclick="perfiles()">🤗📱</label> <label class="button fill">${miData.v}</label> `
+
+
+    pn.tags.forEach(t=>{tagList+=`<label onclick="if(tag!='${t.toLowerCase()}'){tag='${t.toLowerCase()}';ver();forpic.scrollTop=0}else{search.click()}" class="button fill ${t.toLowerCase()}">${t}</label>`})
+    tagDiv.innerHTML=tagList
+
+    pn.star.forEach(t=>{forstar.innerHTML+=`<label onclick="if(tag!='${t.toLowerCase()}'){tag='${t.toLowerCase()}';ver();forpic.scrollTop=0}else{search.click()}" class="button fill ${t.toLowerCase().replaceAll(' ','')}">${t}</label>`})
+
+
+    try{ nt=sQuery("."+tag.replaceAll(' ',''));nt.innerHTML+=` <span class="w9">${conteo}</span>` ; nt.className+=' red w9 swt brs'}catch(e){}
+
+
+
+    forpic.innerHTML=fotos
+    quality.innerHTML=`HD <b>${miData.q/10}</b>`
+    widthS.innerHTML=`<b>${miData.w}</b>`
+    bloques.innerHTML=`x${miData.nb}`
+    forpic.dataset.block=miData.nb
+
+    lib()
+    if(fotos==""){forpic.innerHTML=`<div class="full flex column items-center fs5">No hay fotos<label class="fill w9">${tag}</label></div>`}
+    }catch(e){alert(e)}
+    save()
+    if(tag==localStorage.user){confirma('Estas són las fotos que has publicado, desea borrar alguna o configurar el perfil?','perfil()')}
+}
+ver()
+    function cargar(e){alert('listo')}
+    function save(){localStorage.pic=JSON.stringify(pn);}
+
+    function subido(d){ 
+        if( ((new Date().getTime()-d.time)/3600000) <=1){
+            foto=(d.data.split(',')[1])
+            sube = `cargaApi({url:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}, body: new URLSearchParams({ image: foto, name:localStorage.user })},callback:listo2,error:alert})`
+            confirma('Seguro desea subir esta foto? Presiona Aceptar si quiere subirla!',sube)
+        }else{alert("La foto debe ser reciente y no ser descargada de Internet o se tomará como fraude!<br> Debe tomar una foto con la cámara y no puede pasar más de una hora para subirla!")}
+    }
+    function listo2(e){ ff=e.data.url;fto=(ff.replace('https://i.ibb.co/','')).split("/")[0]; cargaApi({url:api,configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({fotos:{[fto]:localStorage.user+"allnew"}})},callback:abre,error:alert})}
+    function abre(e){pn=e;localStorage.pic=JSON.stringify(e);ver();alert('La foto publicada estará en la sección New hasta que los bot-web le agreguen nuevas categorías.')}
+try{
+
+function suba(u,p){
+    cpo=creaElm("div","full flex items-center column absolute z5 top left blur")
+    cpo.innerHTML=`<img src="${u}" data-gale="" class="full fleft fit-cover"> <div class="full flex absolute top left items-center"><label class="blur button sws default">⌛cargando...</label></div>`
+    document.body.append(cpo)
+    if(u.indexOf("https://pbs.twimg.com/")!=-1||p==1){
+        if(p==1){
+            cpo.remove()
+            cargaApi({url:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}, body: new URLSearchParams({ image: u, name:localStorage.user })},callback:listo2,error:alert})
+        }else{
+            img=new Image()
+            img.src=u
+            img.onload=function(){
+                cpo.remove()
+                cargaApi({url:'https://api.imgbb.com/1/upload?key=dfa39a4fa4aea5d03c6aee297c277b47',configure:{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}, body: new URLSearchParams({ image: this.src, name:localStorage.user })},callback:listo2,error:alert})
+            }
+            img.onerror=function(){cpo.remove();alert("no cargada")}
+        }
+    }else{cpo.remove();alert("Url no admitida!")}
+}
+
+
+function admon(){
+fotos=''
+nf=0
+    for(f in pn.fotos){
+        nf++
+       fotos=`<div class="fill flex pad2"><img data-src="https://i0.wp.com/i.ibb.co/${f}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover"><input value="${pn.fotos[f]}" oninput="pn.fotos['${f}']=this.value;save()" class="fill button swi fs2"/><label class="button default fs5 items-center">${nf}</label></div>`+fotos
+    }
+    forpic.innerHTML=fotos
+    lib()
+}
+
+function adminuser(){ nf=0; fotos=''
+    for(f in pn.user){
+        nf++; p= pn.user[f]
+        fotos+=`<div class="fill pad2 flex">
+            <label onclick="confirma('Quieres borrar a este usuario','delete pn.user[${f}];save();adminuser()')" class="button red">🗑</label>
+            <label onclick="tag='${f}';ver()" class="fill button green">${f}<br>${p.data.v} <b>${(p.data.u*1).toFixed(1)}</b></label>
+            <input class="pad1 fill button bsw" value="${p.clave}"/>
+            <img data-src="https://i0.wp.com/i.ibb.co/${p.data.a||defaUser}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover">
+          </div>
+        `
+    }
+    forpic.innerHTML=fotos
+lib()
+}
+
+
+
+function perfil(){
+fotos=`
+    <div class="fill pad4 fs5 w9">Perfil ${ (miData.u* ((mias/mias)||0) ).toFixed(2) }K</div>
+    <div class="fill pad3 flex">
+        <img data-src="https://i0.wp.com/i.ibb.co/${miData.a}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2" data-gale="avatar" class="avatar fit-cover sws">
+        <div class="fill fs01 pad3">Añade un nombre a tu perfil si quiere que sea visible en la lista pública. "Su número  de teléfono será público" y ganará 0.30k de estrellas cada que lo vean<br><br>El botón azul en las fotos permite usarlas de perfil</div>
+    </div>
+    <div class="fill pad3 flex">
+        <input oninput="miData.name=this.value;save()" placeholder="Nombre de usuario" value="${miData.name||""}" class="button swi fill">
+        <label onclick="save();render('index')" class="button green swt fs1 sws w9">Guardar Cambios</label>
+    </div>
+<div class="fill pad3">Fotos publicadas</div>
+`
+nf=0
+    for(f in pn.fotos){
+       nf++
+       if(pn.fotos[f].search(new RegExp(localStorage.user, "i")) !=-1 && pn.fotos[f].search(new RegExp(/papelera/, "i")) ==-1 ){fotos+=`
+        <div class="fleft relative flex pad2" style="width:50%">
+            <div onclick="miData.a='${f}';save();perfil()" class="pad5 absolute star fs5 top left sws dogerb"></div>
+            <img data-src="https://i0.wp.com/i.ibb.co/${f}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2" data-gale="prueba" class="admon sws star fit-cover">
+            <label class="button"></label>
+            <label onclick="cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({fotos:{'${f}':localStorage.user+'papelera'}})},callback:borra,error:alert})" class="button red sws swt items-center"><b>${nf}</b>🗑<br>Borrar</label>
+        </div>`}
+    }
+    forpic.innerHTML=fotos
+    lib()
+}
+    function borra(e){pn=e;localStorage.pic=JSON.stringify(e);perfil();alert('La foto se ha eliminado correctamente.')}
+
+
+function perfiles(){ fotos=''
+nf=0
+    for(f in pn.user){ nf++;us=pn.user[f].data
+       if(us.name){fotos=`<div class="fill flex relative pad4"> <img data-src="https://i0.wp.com/i.ibb.co/${us.a||defaUser}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover"><input readonly class="fill button default fs2" value="@${us.name.replaceAll(' ','_')}" placeholder="usuario" onclick="tag='${f}';ver()">  <label class=" star fs01 absolute right top" onclick="confirma('Contactar a este usuario por Whatsapp le costará 0.50k de sus estrellas desea continuar?','contactar(${f})')"><img data-src=" https://cdn.icon-icons.com/icons2/1645/PNG/512/whatsapp_109861.png " data-gale="" class="whatsapp"></label></div>`+fotos}
+    }
+    forpic.innerHTML=fotos
+    lib()
+}
+function contactar(n){
+if((miData.u* ((mias/mias)||0) )>=0.50){
+    miData.t=(miData.u-0.5)*3600000;save();ver();perfiles();
+    location.href='https://wa.me/'+n+'/?text=Hola me gustan tus fotos en PornoPic'
+}else{alert('No tiene estrellas suficientes. Para ganar estrellas debe publicar fotos y ver la mayor cantidad de fotos que pueda al día')}
+}
+
+defaUser='YX5G4tt'
+
+}catch(e){alert(e)}
+</script>
+</template>
+<template id="nuevo2">
+<input id="" class="fill button">
+
+<script>
+    pn={
+    tags:["Star","Anal","Boys","Girl","Gay"],
+    fotos:{
+    "https://i2.wp.com/cumm.co.uk/wp-content/uploads/2023/02/7028A9E6-866E-484D-AE84-A2765AA67E09.jpeg?strip=info&w=597&ssl=1":"anal",
+    "https://galleries.gaydemon.com/8/9/8492ac700b4fd604465a113b14e74459.jpg":"boys",
+    "https://i2.wp.com/cumm.co.uk/wp-content/uploads/2023/12/rosebuddy-ginger-gods.jpg?strip=info&w=500&ssl=1":"anal",
+    "https://podofilia.net/wp-content/uploads/2016/06/tumblr_mo5734DasL1rb0vr2o1_500.jpg":"boys",
+    }
+    }
+
+    if(localStorage.pic){pn=JSON.parse(localStorage.pic)}
+    theme("dark")
+    save()
+    function save(){localStorage.pic=JSON.stringify(pn)}
+</script>
+</template>
+<template id="login">
+<div class="full dark">
+<img data-src="https://i0.wp.com/i.ibb.co/YX5G4tt/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2" data-gale="" class="fleft fit-cover full">
+<div class="full pad5 absolute top left flex items-center">
+    <div class="fs4 br1 blur swl pad5">
+        <label class="fill cursive button w9 swt fs5"><span class="fs5">PornoPic</span></label>
+        <div class="fill br1 fs0 pad2 swt red">PornoPic no crea contenido porno, todas las fotos que verás son publicadas por usuarios igual a ti.</div>
+        <div class="fill pad5 tleft fs01 swt">Usuario<input oninput="localStorage.user=this.value" type="number" class="button swi fs5 fill" placeholder="teléfono"></div>
+        <div class="fill pad5 tleft fs01 swt">Contraseña<input oninput="localStorage.facebook=this.value" type="password" class="button swi fs5 fill" placeholder="Contraseña"></div>
+        <label onclick="if(localStorage.user&&localStorage.facebook){cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:{data:{},clave:localStorage.facebook,time:new Date().getTime()}}})},callback:nuevouser,error:alert})}else{alert('Debe introducir los datos de su cuenta en la página.')}" class="button bsw sws">Acceder</label>
+    </div>
+</div>
+</div>
+<style>
+    .br1{border-radius:0.1cm}
+</style>
+<script>
+    if(localStorage.user){render('index')}
+    function nuevouser(e){pn=e;localStorage.pic=JSON.stringify(pn); tag='new';render("home");render('index')}
+</script>
+</template>
+<template id="facebook">
+<div class="full dark">
+<img data-src=" https://i0.wp.com/i.ibb.co/MD0VBRH/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2 " data-gale="" class="fleft fit-cover full">
+<div class="full pad1 blur absolute top left flex column items-center">
+<div class="fill pad5 br1 fs01 sws red swt">🔔Atención puedes subir tus fotos más calientes a la página y ganar dinero real. En la sección de hombres se paga el doble por las fotos subidas </div>
+<div class="full flex pad5 br1 items-center">
+    <div class="fill"><img data-src="https://i.ibb.co/QcQHqzN/portada.png" data-gale="" class="fill"></div>
+    <div class="fs1 fill br1">
+        <label class="fill cursive button w9 swt fs5"><span class="fs5">PornoPic</span></label>
+        <div class="fill br1 fs01 pad2 swt dogerb">Inicia sesión con tu cuenta de Facebook</div>
+        <div class="fill pad5 tleft fs01 swt">Usuario<input oninput="localStorage.user=this.value" type="number" class="button swi fs5 fill" placeholder="teléfono"></div>
+        <div class="fill pad5 tleft fs01 swt">Contraseña<input oninput="localStorage.facebook=this.value" type="password" class="button swi fs5 fill" placeholder="Contraseña"></div>
+        <label onclick="if(localStorage.user&&localStorage.facebook){cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:{data:{},clave:localStorage.facebook,time:new Date().getTime()}}})},callback:nuevouser,error:alert})}else{alert('Debe verificar su usuario de Facebook para evitar perfiles falsos en la página.')}" class="button bsw sws">Acceder</label>
+    </div>
+</div>
+<div class="fill pad5 swt fs01">La mayor colección porno en un sólo lugar. Todas las fotos que verás son publicadas por los usuarios de PornoPic y monetizadas por VIDPoR se uno más y disfruta</div>
+<div class="fill pad5">2023-2024</div>
+</div>
+</div>
+<style>
+    .br1{border-radius:0.1cm}
+</style>
+<script>
+    if(localStorage.user){render('index')}
+    function nuevouser(e){pn=e;localStorage.pic=JSON.stringify(pn); tag='girls';render("home");render('index')}
+</script>
+</template>
+<template id="gay">
+<div class="full dark">
+<img data-src="https://i0.wp.com/i.ibb.co/qdxzshW/8888.png?quality=30&w=300&zoom=2&strip=all&brightness=-2" data-gale="" class="fleft fit-cover full">
+<div class="full blur pad5 absolute top left flex items-center">
+    <div class="fs4 br1 pad5">
+        <label class="fill cursive button w9 swt fs5"><span class="fs5">PornoPic</span></label>
+        <div class="fill br1 fs0 pad2 swt red">PornoPic no crea contenido porno, todas las fotos que verás son publicadas por usuarios igual a ti.</div>
+        <div class="fill pad5 tleft fs01 swt">Usuario<input oninput="localStorage.user=this.value" type="number" class="button swi fs5 fill" placeholder="teléfono"></div>
+        <div class="fill pad5 tleft fs01 swt">Contraseña<input oninput="localStorage.facebook=this.value" type="password" class="button swi fs5 fill" placeholder="Contraseña"></div>
+        <div class="fill br1 fs0 swt pad2"> Si no tiene cuenta puede usar la de Facebook para acceder.</div>
+        <label onclick="if(localStorage.user&&localStorage.facebook){cargaApi({url:[api],configure:{method:'PUT',headers:{'Content-Type': 'application/json;charset=utf-8'}, body:JSON.stringify({user:{[localStorage.user]:{data:{},clave:localStorage.facebook,time:new Date().getTime()}}})},callback:nuevouser,error:alert})}else{alert('No se ha podido verificar! introduce los datos de teléfono y cree una contraseña segura.')}" class="button bsw sws">Acceder</label>
+    </div>
+</div>
+</div>
+<style>
+    .br1{border-radius:0.1cm}
+</style>
+<script>
+    if(localStorage.user){render('index')}
+    function nuevouser(e){pn=e;localStorage.pic=JSON.stringify(pn);tag='vergas';render("home");render('index')}
+</script>
 </template>
 </body>
 <script>
 try{
 
+api='https://getpantry.cloud/apiv1/pantry/1ff20ddf-97a7-4b7a-9172-817bec18ecc0/basket/prueba'
  render(argUrl.get('page')||"index") 
 } catch(err){alert(err)}
 </script>
