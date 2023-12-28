@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Thu Dec 28 2023 12:06:52 GMT-0500 (hora estándar de Cuba)-->
+<!-- Thu Dec 28 2023 13:37:50 GMT-0500 (hora estándar de Cuba)-->
 <title>yh</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
@@ -177,9 +177,13 @@ cargaInicial=new Date().getTime()
 </script>
 </template>
 <template id="home">
+
+<!-- https://acortar.link/pornopic_facebook -->
+<!-- https://acortar.link/pp_gay -->
+
 <!-- Plantilla básica creada para iniciar con la librería  -->
-<main class="mx-w blur flex column">
-<header class="btop dblue pad2">
+<main class="mx-w flex column">
+<header class="btop blur pad2">
     <!-- header top -->
     <div class="fill flex upload pad3">
         <input id="fls" onchange="loadFile(this,subido)" type="file" hidden accept="image/*" capture>
@@ -198,7 +202,7 @@ cargaInicial=new Date().getTime()
     </div>
 </header>
     <!-- contenido web -->
-    <div class="fill admin dblue dnone pad5">
+    <div class="fill admin blur swl dnone pad5">
         <div class="fill pad3 flex">
             <input id="urls" onchange="this.value=(this.value.split('/')[4]||'');tags.value=pn.fotos[this.value]||'all new'" placeholder="XHGfhhT" class="button swi fill" autocapitalize="none" autocomplete="off" wrap="off">
             <input id="tags" placeholder="tags" class="button swi fill" autocapitalize="none" autocomplete="off" wrap="off" onchange="listoSube.click()">
@@ -221,7 +225,7 @@ cargaInicial=new Date().getTime()
         <div id="forpic" class="full fleft inblock pad1 auto" data-gale="pornopic" data-class="" data-transform="1.3" data-block="3" data-margin="4"></div>
         <div class="formore fleft inblock column"><div id="forstar" class="auto dark sws brs forstar absolute top left pad3 column"></div></div>
     </div>
-    <div class="flex pad3 dblue sws fill">
+    <div class="flex pad3 blur sws fill">
         <div id="buttons" class="fill flex pad1"></div>        
         <label data-collapse="shop" class="button sws default">🛒</label>
         <label onclick="miData.nb++;save();ver()" class="button w9 bsw sws" id="bloques"></label>
@@ -236,8 +240,8 @@ cargaInicial=new Date().getTime()
     </div>
 </main>
 <style>
-.whatsapp{width:35px}
-.avatar{width:3cm;height:3cm;border-radius:2cm}
+    .whatsapp{width:35px}
+    .avatar{width:3cm;height:3cm;border-radius:2cm}
     .admon{width:1.5cm;height:1.5cm}
     .star{border-radius:0.1cm}
     .forstar{width:5cm}
@@ -416,11 +420,13 @@ nf=0
     function borra(e){pn=e;localStorage.pic=JSON.stringify(e);perfil();alert('La foto se ha eliminado correctamente.')}
 
 
-function perfiles(){ fotos=''
+function perfiles(){ fotos=""
 nf=0
     for(f in pn.user){ nf++;us=pn.user[f].data
        if(us.name){fotos=`<div class="fill flex relative pad4"> <img data-src="https://i0.wp.com/i.ibb.co/${us.a||defaUser}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover"><input readonly class="fill button default fs2" value="@${us.name.replaceAll(' ','_')}" placeholder="usuario" onclick="tag='${f}';ver()">  <label class=" star fs01 absolute right top" onclick="confirma('Contactar a este usuario por Whatsapp le costará 0.50k de sus estrellas desea continuar?','contactar(${f})')"><img data-src=" https://cdn.icon-icons.com/icons2/1645/PNG/512/whatsapp_109861.png " data-gale="" class="whatsapp"></label></div>`+fotos}
     }
+
+    fotos='<div class="fill pad3 w9 fs2">Perfiles cercanos</div>'+fotos
     forpic.innerHTML=fotos
     lib()
 }
