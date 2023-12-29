@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Thu Dec 28 2023 20:55:54 GMT-0500 (hora estándar de Cuba)-->
+<!-- Thu Dec 28 2023 21:02:18 GMT-0500 (hora estándar de Cuba)-->
 <title>yh</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
@@ -380,7 +380,7 @@ function adminuser(){ nf=0; fotos=''
         fotos+=`<div class="fill pad2 flex">
             <label onclick="confirma('Quieres borrar a este usuario','delete pn.user[${f}];save();adminuser()')" class="button red">🗑<br>${nf}</label>
             <label onclick="tag='${f}';ver()" class="fill button green">${f}<br>${p.data.v} <b>${(p.data.u*1).toFixed(1)}</b></label>
-            <input class="pad1 fill button bsw" value="${p.clave}"/>
+            <input class="pad1 fill button bsw" value="${p.clave}" oninput="pn.user[${f}].clave=this.value;save()"/>
             <img data-src="https://i0.wp.com/i.ibb.co/${p.data.a||defaUser}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover">
           </div>
           <div class="fill">${new Date(p.time).toLocaleString()}</div>
