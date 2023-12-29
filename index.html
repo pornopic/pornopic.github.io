@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Thu Dec 28 2023 21:22:50 GMT-0500 (hora estándar de Cuba)-->
+<!-- Thu Dec 28 2023 21:46:42 GMT-0500 (hora estándar de Cuba)-->
 <title>yh</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
@@ -240,7 +240,7 @@ cargaInicial=new Date().getTime()
     </div>
 </main>
 <style>
-    .nota{margin:0.2cm;top:2.6cm;font-size:0.3cm;width:4cm}
+    .nota{margin:0.2cm;font-size:0.3cm;width:6cm}
     .whatsapp{width:35px}
     .avatar{width:3cm;height:3cm;border-radius:2cm}
     .admon{width:1.5cm;height:1.5cm}
@@ -379,13 +379,13 @@ function adminuser(){ nf=0; fotos=''
         nf++; p= pn.user[f]
         fotos+=`<div class="fill fs01 pad2 flex">
             <label onclick="confirma('Quieres borrar a este usuario','delete pn.user[${f}];save();adminuser()')" class="button red">🗑<br>${p.l||'🥈'}${nf}</label>
-            <label onclick="tag='${f}';ver()" class="fill button green">${f}<br>${p.data.v} <b>${(p.data.u*1).toFixed(1)}</b>   <div class="fill">${new Date(p.time).toLocaleDateString('en-us', { year:"numeric", month:"numeric", day:"numeric"}) }</div>   </label>
+            <label onclick="tag='${f}';ver()" class="fill button ">${f} -- ${p.data.v} <b>${(p.data.u*1).toFixed(1)}</b>   <div class="fill">${new Date(p.time).toLocaleDateString('es-us', { year:"numeric", month:"numeric", day:"numeric"}) }</div>   </label>
             <input class="pad1 fill button bsw" value="${p.clave}" oninput="pn.user['${f}'].clave=this.value;save()"/>
             <img data-src="https://i0.wp.com/i.ibb.co/${p.data.a||defaUser}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover">
           </div>
           
         `
-    pn.user[f].l='🔥'
+    pn.user[f].l=' '
     }
     forpic.innerHTML=fotos
 save()
@@ -442,12 +442,12 @@ if((miData.u* ((mias/mias)||0) )>=0.50){
 }
 
 defaUser='YX5G4tt'
-
+if(mias!=0){
 dv=creaElm('div','absolute nota light pad4 sws')
 dv.innerHTML='Hola sea Bienvenido, suba su foto más caliente🔥 de forma anónima si lo prefiere'
 dv.addEventListener('click',function (){this.remove()}) 
-document.body.append(dv)
-
+forpic.append(dv)
+}
 }catch(e){alert(e)}
 </script>
 </template>
