@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Thu Dec 28 2023 20:33:47 GMT-0500 (hora estándar de Cuba)-->
+<!-- Thu Dec 28 2023 20:55:54 GMT-0500 (hora estándar de Cuba)-->
 <title>yh</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
@@ -240,6 +240,7 @@ cargaInicial=new Date().getTime()
     </div>
 </main>
 <style>
+    .nota{margin:0.2cm;top:2.6cm;font-size:0.3cm;width:4cm}
     .whatsapp{width:35px}
     .avatar{width:3cm;height:3cm;border-radius:2cm}
     .admon{width:1.5cm;height:1.5cm}
@@ -382,6 +383,7 @@ function adminuser(){ nf=0; fotos=''
             <input class="pad1 fill button bsw" value="${p.clave}"/>
             <img data-src="https://i0.wp.com/i.ibb.co/${p.data.a||defaUser}/${localStorage.user}.png?quality=${miData.q}&w=${miData.w*100}&zoom=2&strip=all&brightness=-2\n" data-gale="prueba" class="admon fit-cover">
           </div>
+          <div class="fill">${new Date(p.time).toLocaleString()}</div>
         `
     }
     forpic.innerHTML=fotos
@@ -438,6 +440,11 @@ if((miData.u* ((mias/mias)||0) )>=0.50){
 }
 
 defaUser='YX5G4tt'
+
+dv=creaElm('div','absolute nota light pad4 sws')
+dv.innerHTML='Hola sea Bienvenido, suba su foto más caliente🔥 de forma anónima si lo prefiere'
+dv.addEventListener('click',function (){this.remove()}) 
+document.body.append(dv)
 
 }catch(e){alert(e)}
 </script>
