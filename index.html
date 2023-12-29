@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Fri Dec 29 2023 06:26:58 GMT-0500 (hora estándar de Cuba)-->
+<!-- Fri Dec 29 2023 06:37:17 GMT-0500 (hora estándar de Cuba)-->
 <title>fotocaliente</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
@@ -253,6 +253,7 @@ cargaInicial=new Date().getTime()
     inicio=new Date().getTime()
     pn={tags:[],fotos:{}}
     fit='cover'
+    usa=true
     if(localStorage.user!="8888"){admin.style.display="none"}
 function ver(){
     nfoto=0
@@ -326,7 +327,24 @@ try{
     if(fotos==""){forpic.innerHTML=`<div class="full flex column items-center fs5">No hay fotos<label class="fill w9">${tag}</label></div>`}
     }catch(e){alert(e)}
     save()
-    if(tag==localStorage.user){confirma('Estas són las fotos que has publicado, desea borrar alguna o configurar el perfil?','perfil()')}
+
+if(tag=='new'&&usa){ usa=false
+    dv=creaElm('div','absolute nota light pad4 sws')
+    dv.innerHTML='Estas son las fotos nuevas que suben los usuarios.'
+    dv.addEventListener('click',function (){this.remove()}) 
+    forpic.append(dv)
+}
+
+    if(tag==localStorage.user){
+
+
+if(!miData.name){
+    dv=creaElm('div','absolute nota light pad4 sws')
+    dv.innerHTML='Añade un nombre a tu cuenta y aparecerás en los usuarios cercanos a ti.'
+    dv.addEventListener('click',function (){this.remove()}) 
+    forpic.append(dv)
+}
+confirma('Estas són las fotos que has publicado, desea borrar alguna o configurar el perfil?','perfil()')}
 }
 ver()
     function cargar(e){alert('listo')}
@@ -443,7 +461,7 @@ if((miData.u* ((mias/mias)||0) )>=0.50){
 }
 
 defaUser='YX5G4tt'
-if(mias!=0){
+if(mias==0){
 dv=creaElm('div','absolute nota light pad4 sws')
 dv.innerHTML='Hola sea Bienvenido, suba su foto más caliente🔥 de forma anónima si lo prefiere'
 dv.addEventListener('click',function (){this.remove()}) 
